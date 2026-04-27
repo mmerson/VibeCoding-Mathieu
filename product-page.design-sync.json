@@ -94,6 +94,8 @@
           "itemSpacing": 8,
           "padding": 4,
           "cornerRadius": 1000,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
           "fills": [{ "type": "SOLID", "color": "#000000", "opacity": 0.1 }],
           "token": "VpPageControl/overlay=On",
           "children": [
