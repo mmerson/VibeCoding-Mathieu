@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Return Summary — BloomUI Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body { background: #fff; font-size: 16px; }
+
+    /* ─── BloomUI tokens ─────────────────────────────────────────────────── */
+    :root {
+      --color-brand: #ec008c;
+      --color-brand-hover: #d90082;
+      --color-brand-tap: #ab0067;
+      --color-brand-light: #fff2f9;
+      --color-text-primary: #31313a;
+      --color-text-secondary: #69696f;
+      --color-text-disabled: #c9c9cc;
+      --color-text-placeholder: #9d9da0;
+      --color-bg-page: #ffffff;
+      --color-bg-subtle: #f5f5f6;
+      --color-border: #e0e0e3;
+      --color-border-secondary: #69696f;
+      --color-border-tertiary: #c9c9cc;
+      --color-error: #dd1f29;
+      --color-success: #0f9f40;
+      --font-heading: "VP Next", Arial, sans-serif;
+      --font-body: "HK Grotesk", Arial, sans-serif;
+      --font-condensed: "VP Condensed Next", Impact, Arial, sans-serif;
+      --radius-sm: 4px; --radius-md: 8px; --radius-full: 9999px;
+      --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-body);
+      color: var(--color-text-primary);
+      background: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Top App Bar ────────────────────────────────────────────────────── */
+    .top-bar {
+      display: flex; align-items: center; gap: 8px;
+      height: 56px; padding: 0 16px;
+      background: #fff; border-bottom: 1px solid var(--color-border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .icon-btn {
+      width: 40px; height: 40px; border: none; background: transparent;
+      border-radius: 9999px; cursor: pointer; color: var(--color-text-primary);
+      display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0;
+    }
+    .icon-btn:hover { background: var(--color-bg-subtle); }
+    .top-bar-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-body); }
+    .cart-badge {
+      position: absolute; top: 4px; right: 4px;
+      width: 14px; height: 14px; background: var(--color-brand);
+      border-radius: 9999px; font-size: 8px; font-weight: 700; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ─── Content ────────────────────────────────────────────────────────── */
+    .content { flex: 1; padding: 24px 16px; display: flex; flex-direction: column; gap: 32px; }
+    .page-title { font-family: var(--font-heading); font-size: 26px; font-weight: 500; line-height: 1.2; }
+
+    /* ─── Product Card ───────────────────────────────────────────────────── */
+    .product-card { display: flex; flex-direction: column; gap: 8px; }
+    .product-card-top { display: flex; gap: 16px; align-items: flex-start; }
+    .product-thumb { width: 104px; height: 104px; border-radius: 8px; background: #d6d6d6; flex-shrink: 0; }
+    .product-info { flex: 1; display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+    .product-brand { font-size: 16px; font-weight: 700; }
+    .product-title { font-size: 14px; line-height: 1.4; }
+    .product-variant { font-size: 14px; color: var(--color-text-secondary); }
+    .product-meta-list { display: flex; flex-direction: column; gap: 2px; }
+    .product-meta { display: block; font-size: 14px; line-height: 20px; }
+    .product-meta strong { font-weight: 600; }
+    .products-list { display: flex; flex-direction: column; gap: 16px; }
+    .product-card-hidden { display: none; }
+    .btn-show-all, .btn-show-less {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; height: 44px; padding: 0 16px; border-radius: 4px;
+      background: #ffffff; border: 1px solid #e2e2e5;
+      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      color: #31313a; cursor: pointer; margin-top: 4px;
+    }
+    .btn-show-all:hover, .btn-show-less:hover { background: #f5f5f5; }
+    .btn-show-all:active, .btn-show-less:active { background: #eff0f1; }
+    .btn-show-less { display: none; }
+
+    /* ─── Divider ────────────────────────────────────────────────────────── */
+    .divider { border: none; border-top: 1px solid var(--color-border); }
+
+    /* ─── Section ────────────────────────────────────────────────────────── */
+    .section { display: flex; flex-direction: column; gap: 16px; }
+    .section-title { font-family: var(--font-heading); font-size: 20px; font-weight: 500; margin: 0; }
+
+    /* ─── Summary Card (read-only carrier) ───────────────────────────────── */
+    .summary-card {
+      display: flex; align-items: center; gap: 16px; padding: 16px;
+      border: 1px solid var(--color-border); border-radius: 8px;
+    }
+    .carrier-logo { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .carrier-details { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .carrier-name { font-size: 16px; font-weight: 700; }
+    .carrier-fee { font-size: 14px; color: var(--color-text-secondary); }
+    .carrier-dates { font-size: 14px; font-weight: 700; }
+    .body-text { font-size: 16px; font-weight: 400; line-height: 1.5; }
+
+    /* ─── Amount row ─────────────────────────────────────────────────────── */
+    .amount-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .amount-label { font-size: 16px; font-weight: 700; }
+    .amount-value { font-size: 16px; font-weight: 400; white-space: nowrap; }
+
+    /* ─── Alert ──────────────────────────────────────────────────────────── */
+    .alert { display: flex; align-items: flex-start; gap: 8px; padding: 16px; background: #edf2ff; border: 1px solid #86a9ff; border-radius: 4px; }
+    .alert-icon { flex-shrink: 0; margin-top: 2px; }
+    .alert-body { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+    .alert-title { font-size: 16px; font-weight: 700; line-height: 1.3; }
+    .alert-message { font-size: 14px; font-weight: 500; line-height: 1.5; }
+
+    /* ─── Important box ──────────────────────────────────────────────────── */
+    .important-box { padding: 16px; background: linear-gradient(135deg, #f0ebff 0%, #e8e0ff 100%); border-radius: 8px; }
+    .important-text { font-size: 16px; font-weight: 400; line-height: 1.5; }
+    .important-text strong { font-weight: 700; }
+
+    /* ─── Keyboard focus ─────────────────────────────────────────────────── */
+    *:focus { outline: none; }
+    .icon-btn:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 2px;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 5px rgba(236,0,140,0.18);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────────── */
+    .footer { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-top: 1px solid var(--color-border); background: #fff; position: sticky; bottom: 0; }
+    .btn {
+      display: flex; align-items: center; justify-content: center;
+      height: 44px; width: 100%; border-radius: 4px;
+      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      cursor: pointer; border: 1px solid transparent; transition: background .15s;
+    }
+    .btn-brand { background: #ec008c; color: #fff; border-color: #ec008c; }
+    .btn-brand:hover { background: #d90082; border-color: #d90082; }
+    .btn-brand:active { background: #ab0067; border-color: #ab0067; }
+    .btn-secondary { background: #fff; color: var(--color-text-primary); border-color: #e0e0e3; }
+    .btn-secondary:hover { background: #f5f5f5; }
+    .btn-secondary:active { background: #eff0f1; }
+
+    /* ─── Desktop-only elements (hidden on mobile) ───────────────────────── */
+    .dt-header     { display: none; }
+    .dt-nav        { display: none; }
+    .dt-back       { display: none; }
+    .dt-cta        { display: none; }
+    .dt-two-cols   { display: contents; }
+    .dt-col-left   { display: contents; }
+    .dt-col-right  { display: contents; }
+
+    /* ─── Desktop layout (≥ 1024px) ─────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      body { background: #fff; }
+
+      /* ── Veepee header ── */
+      .dt-header {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 70px; padding: 0 24px;
+        background: #fff; border-bottom: 1px solid #e1e1e4;
+        position: sticky; top: 0; z-index: 100; width: 100%; box-sizing: border-box;
+      }
+      .dth-left  { display: flex; align-items: center; gap: 16px; }
+      .dth-right { display: flex; align-items: center; gap: 8px; }
+      .dth-center { display: flex; align-items: center; }
+      .dth-menu-btn {
+        width: 56px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+      }
+      .dth-menu-icon { display: flex; flex-direction: column; gap: 3px; }
+      .dth-menu-icon span { display: block; width: 20px; height: 2px; background: #464650; border-radius: 1px; }
+      .dth-search {
+        display: flex; align-items: center; gap: 8px;
+        width: 382px; height: 40px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 4px;
+        background: #fff; cursor: text;
+        font-size: 14px; color: #9d9da0; font-family: var(--font-body);
+      }
+      .dth-logo-text { font-size: 26px; font-weight: 900; color: #121217; letter-spacing: -0.04em; }
+      .dth-logo-mark { color: #ec008c; }
+      .dth-icon-btn {
+        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer; padding: 4px;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+        min-width: 56px;
+      }
+      .dth-icon-circle {
+        width: 32px; height: 32px; border-radius: 50%; background: #f7f7f7;
+        display: flex; align-items: center; justify-content: center; position: relative;
+      }
+      .dth-badge {
+        position: absolute; top: -2px; right: -2px;
+        width: 12px; height: 12px; background: #ec008c; border-radius: 50%;
+        font-size: 8px; font-weight: 700; color: #fff;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .dth-cart-btn {
+        display: flex; align-items: center; gap: 8px;
+        height: 40px; padding: 0 16px;
+        border: 1px solid #ec008c; border-radius: 4px;
+        background: #fff; cursor: pointer; font-family: var(--font-body);
+        font-size: 14px; font-weight: 500; color: #22222b;
+      }
+
+      /* ── Category nav ── */
+      .dt-nav {
+        display: flex; align-items: center; gap: 8px;
+        height: 60px; padding: 0 24px; overflow-x: auto;
+        background: #fff; border-bottom: 1px solid #e1e1e4; width: 100%;
+        box-sizing: border-box;
+      }
+      .dt-nav::-webkit-scrollbar { display: none; }
+      .dt-nav-pill {
+        flex-shrink: 0; height: 36px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 18px;
+        font-size: 16px; font-weight: 500; color: #22222b;
+        background: #fff; cursor: pointer; white-space: nowrap;
+        display: flex; align-items: center;
+      }
+      .dt-nav-pill.active { border: 2px solid #464650; font-weight: 700; }
+
+      /* ── Mobile top bar hidden ── */
+      .top-bar { display: none; }
+
+      /* ── Page ── */
+      .page { max-width: none; background: #fff; min-height: calc(100dvh - 130px); box-shadow: none; }
+
+      /* ── Desktop back button (VpButton ghost sm) ── */
+      .dt-back {
+        display: inline-flex; align-items: center; gap: 6px;
+        height: 32px; padding: 0 12px;
+        background: transparent; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 14px; font-weight: 700;
+        color: var(--color-text-primary); font-family: var(--font-heading);
+        transition: background 0.15s; align-self: flex-start;
+      }
+      .dt-back:hover { background: var(--color-bg-subtle); }
+      .dt-back:active { background: #eff0f1; }
+      .dt-back:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+
+      /* ── Content: 845px centered ── */
+      .content {
+        max-width: 845px; margin: 0 auto;
+        padding: 24px 0 40px; gap: 24px;
+        flex-direction: column;
+      }
+
+      /* ── Two-column layout (ReturnSummary) ── */
+      .dt-two-cols {
+        display: flex; gap: 24px; align-items: flex-start;
+      }
+      .dt-col-left {
+        flex: 0 0 302px; min-width: 302px; display: flex; flex-direction: column; gap: 16px;
+      }
+      .dt-col-right {
+        flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 24px;
+      }
+
+      /* ── Footer hidden, desktop CTA shown ── */
+      .footer { display: none; }
+      .dt-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+      .dt-divider { height: 1px; background: #e2e2e5; border: none; margin: 0 0 24px; width: 100%; }
+      .dt-cta-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 48px; padding: 0 32px;
+        background: var(--color-brand); color: #fff; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 16px; font-weight: 700;
+        font-family: var(--font-body); transition: background 0.15s;
+      }
+      .dt-cta-btn:hover:not(:disabled) { background: var(--color-brand-tap); }
+      .dt-cta-btn:disabled { background: #c9c9cc; color: #fff; cursor: not-allowed; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ─── Desktop Header ──────────────────────────────────────────── -->
+  <header class="dt-header">
+    <div class="dth-left">
+      <button class="dth-menu-btn" aria-label="Menu">
+        <div class="dth-menu-icon"><span></span><span></span><span></span></div>
+        Menu
+      </button>
+      <div class="dth-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#9d9da0" stroke-width="1.5"/><path d="M20 20l-3-3" stroke="#9d9da0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Rechercher sur Veepee
+      </div>
+    </div>
+    <div class="dth-center">
+      <span class="dth-logo-text"><span class="dth-logo-mark">v</span>eepee</span>
+    </div>
+    <div class="dth-right">
+      <button class="dth-icon-btn" aria-label="Notifications">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dth-badge">1</span>
+        </div>
+        Notifications
+      </button>
+      <button class="dth-icon-btn" aria-label="Parrainage">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#464650" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Parrainage
+      </button>
+      <button class="dth-cart-btn" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="#22222b" stroke-width="1.5"/><path d="M16 10a4 4 0 01-8 0" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Mon panier
+      </button>
+    </div>
+  </header>
+  <!-- ─── Desktop Nav ─────────────────────────────────────────────── -->
+  <nav class="dt-nav">
+    <button class="dt-nav-pill active">Accueil</button>
+    <button class="dt-nav-pill">Mode</button>
+    <button class="dt-nav-pill">Chaussures</button>
+    <button class="dt-nav-pill">Maison</button>
+    <button class="dt-nav-pill">Voyage</button>
+    <button class="dt-nav-pill">Beauté</button>
+    <button class="dt-nav-pill">Loisir</button>
+    <button class="dt-nav-pill">Sport</button>
+  </nav>
+  <div class="page">
+
+    <!-- Top App Bar -->
+    <div class="top-bar">
+      <button class="icon-btn" onclick="onModify()" aria-label="Retour">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span class="top-bar-title">Retourner un produit</span>
+      <button class="icon-btn" aria-label="Panier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="cart-badge">1</span>
+      </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <!-- Desktop back button -->
+      <button class="dt-back" onclick="history.back()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Modifier votre retour
+      </button>
+
+      <h1 class="page-title">Votre retour :</h1>
+
+      <!-- Product Card -->
+      <div class="dt-two-cols">
+        <div class="dt-col-left">
+      <!-- Products List -->
+      <div class="products-list">
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <div class="product-thumb"></div>
+            <div class="product-info">
+              <span class="product-brand">Celio</span>
+              <span class="product-title">Blazer - 100% coton - noir et blanc</span>
+              <span class="product-variant">Taille M - 42 (ES)</span>
+            </div>
+          </div>
+          <div class="product-meta-list">
+            <span class="product-meta"><strong>Quantité retournée :</strong> 1</span>
+            <span class="product-meta"><strong>Motif du retour :</strong> J'ai changé d'avis</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <div class="product-thumb"></div>
+            <div class="product-info">
+              <span class="product-brand">Celio</span>
+              <span class="product-title">Teeshirt - 100% coton - noir</span>
+              <span class="product-variant">Taille M - 42 (FR)</span>
+            </div>
+          </div>
+          <div class="product-meta-list">
+            <span class="product-meta"><strong>Quantité retournée :</strong> 1</span>
+            <span class="product-meta"><strong>Motif du retour :</strong> Taille trop petite</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <div class="product-thumb"></div>
+            <div class="product-info">
+              <span class="product-brand">Lacoste</span>
+              <span class="product-title">Polo classique - piqué - blanc</span>
+              <span class="product-variant">Taille L - 44 (FR)</span>
+            </div>
+          </div>
+          <div class="product-meta-list">
+            <span class="product-meta"><strong>Quantité retournée :</strong> 2</span>
+            <span class="product-meta"><strong>Motif du retour :</strong> Article défectueux ou endommagé</span>
+          </div>
+        </div>
+        <!-- Card 4 (hidden) -->
+        <div class="product-card product-card-hidden" id="summary-card-4">
+          <div class="product-card-top">
+            <div class="product-thumb"></div>
+            <div class="product-info">
+              <span class="product-brand">Dockers</span>
+              <span class="product-title">Pantalon chino - coupe slim - kaki</span>
+              <span class="product-variant">Taille 32 × 32</span>
+            </div>
+          </div>
+          <div class="product-meta-list">
+            <span class="product-meta"><strong>Quantité retournée :</strong> 1</span>
+            <span class="product-meta"><strong>Motif du retour :</strong> Mauvais article reçu</span>
+          </div>
+        </div>
+        <!-- Show all button -->
+        <button class="btn-show-all" id="btn-show-all-summary" onclick="showAllCards('summary')">Voir tout</button>
+        <button class="btn-show-less" id="btn-show-less-summary" onclick="showLessCards('summary')">Voir moins</button>
+      </div>
+        </div><!-- /.dt-col-left -->
+        <div class="dt-col-right">
+
+      <!-- Mode de retour -->
+      <div class="section">
+        <h2 class="section-title">Mode de retour</h2>
+        <div class="summary-card">
+          <div class="carrier-logo">
+            <img src="../../assets/logos/mondial-relay.svg" width="32" height="32" alt="Mondial Relay" style="object-fit:contain;display:block;" />
+          </div>
+          <div class="carrier-details">
+            <span class="carrier-name">Mondial Relay</span>
+            <span class="carrier-fee">6,90 € de frais de retour</span>
+            <span class="carrier-dates">Lun 09 Fev - Jeu 12 Fev</span>
+          </div>
+        </div>
+        <p class="body-text">Remettre votre colis à n'importe quel point Mondial Relay dans les 14 prochains jours. Nous vous recommandons de vérifier les heures d'ouverture de l'endroit que vous avez choisi avant de vous y rendre.</p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Votre remboursement -->
+      <div class="section">
+        <h2 class="section-title">Votre remboursement :</h2>
+
+        <div class="alert">
+          <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="#4c7ef3" stroke-width="1.5"/>
+            <path d="M12 8v4m0 4h.01" stroke="#4c7ef3" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="alert-body">
+            <span class="alert-title">À noter</span>
+            <span class="alert-message">Vous avez demandé l'ajout d'un ou plusieurs articles à votre retour, veuillez noter que le remboursement sera effectué sur la totalité de vos articles sur la méthode de remboursement.</span>
+          </div>
+        </div>
+
+        <p class="body-text">Vous avez demandé l'ajout d'un ou plusieurs articles à votre retour, veuillez noter que le remboursement sera effectué sur la totalité de vos articles sur la méthode de remboursement.</p>
+
+        <p class="body-text">La valeur du ou des produits moins l'étiquette de retour prépayée de votre méthode de retour choisie. Vous pouvez vous attendre à recevoir votre argent dans un délai maximum de 14 jours après que nous ayons reçu les articles. Nous ne rembourserons les frais d'expédition que si le retour concerne la commande complète.</p>
+
+        <div class="important-box">
+          <p class="important-text"><strong>Important.</strong> N'oubliez pas d'imprimer le bordereau de retour et de le placer dans la boîte avec les articles que vous souhaitez retourner.</p>
+        </div>
+      </div>
+
+        </div><!-- /.dt-col-right -->
+      </div><!-- /.dt-two-cols -->
+
+      <!-- Desktop CTA -->
+      <div class="dt-cta">
+        <hr class="dt-divider" />
+        <button class="dt-cta-btn" onclick="onConfirm()">Confirmer mon retour
+        </button>
+      </div>
+
+    </div><!-- /.content -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="btn btn-brand" onclick="onConfirm()">Confirmer mon retour</button>
+    </div>
+
+  </div>
+
+  <script>
+    function showAllCards(page) {
+      const card = document.getElementById(page + '-card-4');
+      const btnAll  = document.getElementById('btn-show-all-' + page);
+      const btnLess = document.getElementById('btn-show-less-' + page);
+      if (card)    card.style.display  = 'flex';
+      if (btnAll)  btnAll.style.display = 'none';
+      if (btnLess) btnLess.style.display = 'flex';
+    }
+    function showLessCards(page) {
+      const card = document.getElementById(page + '-card-4');
+      const btnAll  = document.getElementById('btn-show-all-' + page);
+      const btnLess = document.getElementById('btn-show-less-' + page);
+      if (card)    card.style.display  = 'none';
+      if (btnAll)  btnAll.style.display = 'flex';
+      if (btnLess) btnLess.style.display = 'none';
+    }
+    function onModify() { window.location.href = '../ReturnMethod/ReturnMethod.preview.html'; }
+    function onConfirm() { window.location.href = '../ReturnFinal/ReturnFinal.preview.html'; }
+  </script>
+</body>
+</html>

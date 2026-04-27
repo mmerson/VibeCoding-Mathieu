@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Return Select — BloomUI Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body { background: #fff; font-size: 16px; }
+
+    /* ─── Design tokens on :root so bottom sheet (outside .page) inherits them */
+    :root {
+      --color-brand: #ec008c;
+      --color-brand-hover: #d90082;
+      --color-brand-tap: #ab0067;
+      --color-brand-light: #fff2f9;
+      --color-text-primary: #31313a;
+      --color-text-secondary: #69696f;
+      --color-text-disabled: #c9c9cc;
+      --color-text-placeholder: #9d9da0;
+      --color-bg-page: #ffffff;
+      --color-bg-subtle: #f5f5f6;
+      --color-border: #e0e0e3;
+      --color-border-secondary: #69696f;
+      --color-border-tertiary: #c9c9cc;
+      --color-error: #dd1f29;
+      --color-success: #0f9f40;
+      --font-heading: "VP Next", Arial, sans-serif;
+      --font-body: "HK Grotesk", Arial, sans-serif;
+      --font-condensed: "VP Condensed Next", Impact, Arial, sans-serif;
+      --radius-sm: 4px; --radius-md: 8px; --radius-full: 9999px;
+    }
+
+    .page {
+      width: 100%; min-height: 100dvh;
+      display: flex; flex-direction: column;
+      font-family: var(--font-body); color: var(--color-text-primary);
+      background: var(--color-bg-page); -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Top App Bar ─────────────────────────────────────────────────────── */
+    .top-bar {
+      display: flex; align-items: center; gap: 8px;
+      height: 56px; padding: 0 16px; background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      position: sticky; top: 0; z-index: 10; flex-shrink: 0;
+    }
+    .icon-btn {
+      width: 40px; height: 40px; border: none; background: transparent;
+      border-radius: 9999px; cursor: pointer; color: var(--color-text-primary);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; flex-shrink: 0;
+    }
+    .icon-btn:hover { background: var(--color-bg-subtle); }
+    .top-bar-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; color: #464650; }
+    .cart-badge {
+      position: absolute; top: 4px; right: 4px;
+      width: 14px; height: 14px; background: var(--color-brand);
+      border-radius: 9999px; font-size: 8px; font-weight: 700; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ─── Content ─────────────────────────────────────────────────────────── */
+    .content { flex: 1; padding: 24px 16px; display: flex; flex-direction: column; gap: 24px; }
+    .page-header { display: flex; flex-direction: column; gap: 4px; }
+    .page-title { font-family: var(--font-heading); font-size: 26px; font-weight: 500; line-height: 1.2; }
+    .order-meta { font-size: 16px; font-weight: 400; line-height: 1.4; }
+    .instruction { font-size: 16px; font-weight: 400; line-height: 1.5; }
+    .cards-list { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ─── Product Card ────────────────────────────────────────────────────── */
+    .product-card {
+      border: 1px solid var(--color-border); border-radius: 4px;
+      background: #fff; cursor: pointer; overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .product-card.selected { border: 2px solid var(--color-text-primary); }
+    .card-top { display: flex; gap: 16px; align-items: flex-start; padding: 16px; }
+
+    /* ─── Card checkbox ───────────────────────────────────────────────────── */
+    .card-checkbox {
+      width: 20px; height: 20px; flex-shrink: 0;
+      /* Center vertically against the 104px thumbnail: (104 - 20) / 2 = 42px */
+      margin-top: 42px; align-self: flex-start;
+      border-radius: 4px; border: 2px solid #69696f; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.15s, background 0.15s;
+      pointer-events: none; /* click is handled by the card */
+    }
+    .card-checkbox::after {
+      content: '';
+      display: block;
+      width: 10px; height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translate(1px, -1px);
+      opacity: 0; transition: opacity 0.12s;
+    }
+    .product-card.selected .card-checkbox {
+      border-color: var(--color-brand);
+      background: var(--color-brand);
+    }
+    .product-card.selected .card-checkbox::after { opacity: 1; }
+    .product-thumb { width: 104px; height: 104px; border-radius: 4px; background: #d6d6d6; flex-shrink: 0; }
+    .product-thumb.tshirt { background: #c5c5c5; }
+    .product-thumb.blazer { background: #b0b0b0; }
+    .product-info { flex: 1; display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+    .product-brand { font-size: 16px; font-weight: 700; }
+    .product-title { font-size: 14px; line-height: 1.4; }
+    .product-variant { font-size: 14px; color: var(--color-text-secondary); }
+
+    /* ─── Expandable fields ───────────────────────────────────────────────── */
+    .card-expand {
+      max-height: 0; overflow: hidden; padding: 0 16px; opacity: 0;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1),
+                  padding-bottom 0.35s cubic-bezier(0.4,0,0.2,1),
+                  opacity 0.25s ease;
+    }
+    .card-expand.open { max-height: 280px; opacity: 1; padding: 0 16px 16px; }
+    .expand-inner { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--color-border); padding-top: 16px; }
+
+    /* ─── VpField ─────────────────────────────────────────────────────────── */
+    .vp-field { display: flex; flex-direction: column; gap: 4px; }
+    .vp-field-label-row { display: flex; align-items: baseline; gap: 4px; }
+    .vp-field-label { font-size: 14px; font-weight: 400; color: var(--color-text-primary); }
+    .vp-field-label.muted { color: var(--color-text-placeholder); }
+    .vp-field-optional { display: none; }
+
+    .vp-field-trigger {
+      display: flex; align-items: center; gap: 8px;
+      height: 44px; border-radius: 4px; padding: 0 12px;
+      cursor: pointer; border: 1px solid #e2e2e5;
+      background: #fff; transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+    }
+    .vp-field-trigger.prefilled { background: #f6f6f6; border-color: transparent; }
+    .vp-field-trigger.prefilled:hover { background: #f6f6f6; }
+    .vp-field-trigger:hover { background: #f5f5f5; }
+    .vp-field-trigger.disabled {
+      background: #f5f5f5; border-color: transparent;
+      cursor: not-allowed; pointer-events: none; opacity: 0.5;
+    }
+
+    .vp-field-value {
+      flex: 1; font-size: 16px; font-weight: 400;
+      color: var(--color-text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .vp-field-value.placeholder { color: var(--color-text-placeholder); }
+    .vp-field-chevron { flex-shrink: 0; color: var(--color-text-secondary); display: flex; }
+
+    /* ─── Keyboard focus ─────────────────────────────────────────────────── */
+    /* Strip default outline; restore only for keyboard navigation */
+    *:focus { outline: none; }
+
+    .icon-btn:focus-visible,
+    .vp-field-chevron:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 2px;
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 5px rgba(236,0,140,0.18);
+    }
+    /* Product card focus ring */
+    .product-card:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(236,0,140,0.35);
+    }
+    /* VpField trigger focus ring */
+    .vp-field-trigger:focus-visible {
+      border-color: #d90082;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(236,0,140,0.18);
+    }
+    /* Bottom sheet list items */
+    .list-item:focus-visible {
+      outline: none;
+      background: #f5f5f5;
+      box-shadow: inset 0 0 0 2px var(--color-brand);
+    }
+    .list-item.selected:focus-visible {
+      background: #fff2f9;
+      box-shadow: inset 0 0 0 2px var(--color-brand);
+    }
+    .footer { padding: 16px; border-top: 1px solid var(--color-border); background: #fff; position: sticky; bottom: 0; flex-shrink: 0; }
+    .btn {
+      display: flex; align-items: center; justify-content: center;
+      height: 44px; width: 100%; border-radius: 4px;
+      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      cursor: pointer; border: 1px solid transparent; transition: background .15s, opacity .2s;
+    }
+    .btn-brand { background: var(--color-brand); color: #fff; border-color: var(--color-brand); }
+    .btn-brand:hover:not(:disabled) { background: #d90082; }
+    .btn-brand:disabled { background: #c9c9cc; border-color: transparent; color: #fff; cursor: not-allowed; }
+
+    /* ─── VpSelectList Dropdown (desktop) ────────────────────────────────── */
+    .dt-dropdown {
+      position: fixed; /* use fixed so it escapes card overflow */
+      background: #fff; border: 1px solid #e2e2e5; border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+      z-index: 300; min-width: 220px; max-height: 400px;
+      overflow-y: auto; display: none;
+    }
+    .dt-dropdown.open { display: block; }
+    .dt-dropdown::-webkit-scrollbar { width: 4px; }
+    .dt-dropdown::-webkit-scrollbar-thumb { background: #c9c9cc; border-radius: 2px; }
+
+    .dt-option-header {
+      padding: 10px 12px 4px;
+      font-family: var(--font-heading); font-size: 13px; font-weight: 700;
+      color: #69696f; text-transform: uppercase; letter-spacing: 0.04em;
+      pointer-events: none; user-select: none;
+    }
+
+    .dt-option {
+      display: flex; align-items: center; gap: 8px;
+      height: 44px; padding: 0 12px;
+      cursor: pointer; background: #fff; border: none; width: 100%;
+      text-align: left; font-family: var(--font-body);
+      font-size: 16px; color: var(--color-text-primary);
+      transition: background 0.12s;
+    }
+    .dt-option:hover { background: var(--color-bg-subtle); }
+    .dt-option:focus-visible { outline: none; background: #f5f5f6; box-shadow: inset 0 0 0 2px var(--color-brand); }
+    .dt-option.selected { background: var(--color-brand-light); }
+    .dt-option.selected:hover { background: #f9d9eb; }
+    .dt-option.selected .dt-option-text { color: var(--color-brand-tap); font-weight: 500; }
+    .dt-option-radio {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      border: 1.5px solid #69696f; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      box-sizing: border-box; transition: border-color 0.12s, background 0.12s;
+    }
+    .dt-option-radio::after {
+      content: ''; display: block; width: 8px; height: 8px;
+      border-radius: 50%; background: #fff; opacity: 0;
+    }
+    .dt-option.selected .dt-option-radio { border-color: var(--color-brand); background: var(--color-brand); }
+    .dt-option.selected .dt-option-radio::after { opacity: 1; }
+    .dt-option-text { flex: 1; }
+
+    /* ─── Bottom Sheet Overlay ────────────────────────────────────────────── */
+    .sheet-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.4);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex; align-items: flex-end;
+    }
+    .sheet-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* ─── Bottom Sheet ────────────────────────────────────────────────────── */
+    .bottom-sheet {
+      width: 100%; background: #fff;
+      border-radius: 8px 8px 0 0;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+      max-height: calc(100dvh - 64px); overflow: hidden;
+      box-shadow:
+        0 15px 32px rgba(34,34,43,0.16),
+        0 4.5px 10px rgba(34,34,43,0.08),
+        0 1.9px 4px rgba(34,34,43,0.10);
+    }
+    .sheet-overlay.open .bottom-sheet { transform: translateY(0); }
+
+    .sheet-drag-area {
+      display: flex; justify-content: center; padding: 12px 0 8px;
+      cursor: grab; flex-shrink: 0;
+    }
+    .sheet-handle { width: 56px; height: 4px; border-radius: 4px; background: #c8c8cd; }
+
+    .sheet-header {
+      padding: 0 16px 24px;
+      border-bottom: 1px solid #e2e2e5;
+      flex-shrink: 0;
+    }
+    .sheet-title { font-family: var(--font-heading); font-size: 20px; font-weight: 500; color: var(--color-text-primary); display: block; }
+
+    /* ─── VpListItem ──────────────────────────────────────────────────────── */
+    .sheet-list { overflow-y: auto; padding: 8px 0; flex: 1; }
+
+    .list-section-title {
+      display: block; padding: 12px 16px 4px;
+      font-family: var(--font-heading); font-size: 18px; font-weight: 500;
+      color: var(--color-text-primary); pointer-events: none; user-select: none;
+    }
+
+    .list-item {
+      display: flex; align-items: center;
+      min-height: 44px; padding: 10px 16px; cursor: pointer;
+      background: #fff; border: none; width: 100%; text-align: left;
+      font-family: var(--font-body);
+      transition: background 0.1s;
+    }
+    .list-item:hover                     { background: #f5f5f5; }
+    .list-item:active                    { background: #eff0f1; }
+    .list-item.selected                  { background: #fff2f9; }
+    .list-item.selected:active           { background: #fcbadd; }
+
+    /* Label text */
+    .list-item-text { flex: 1; font-size: 16px; font-weight: 500; color: #31313a; line-height: 1.4; }
+    .list-item.selected .list-item-text  { font-weight: 500; color: #ab0067; }
+
+    /* ─── Desktop-only elements (hidden on mobile) ───────────────────────── */
+    .content-main  { display: contents; }
+    .content-aside { display: none; }
+    .dt-header     { display: none; }
+    .dt-nav        { display: none; }
+    .dt-back       { display: none; }
+    .dt-cta        { display: none; }
+    .product-price { display: none; align-items: baseline; gap: 1px; margin-top: 4px; }
+    .price-int, .price-currency { font-size: 16px; font-weight: 700; color: #31313a; }
+    .price-dec { font-size: 12px; font-weight: 700; color: #31313a; vertical-align: super; line-height: 1; }
+
+    /* ─── Desktop layout (≥ 1024px) ─────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      body { background: #fff; }
+
+      /* ── Veepee header ── */
+      .dt-header {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 70px; padding: 0 24px;
+        background: #fff; border-bottom: 1px solid #e1e1e4;
+        position: sticky; top: 0; z-index: 100; width: 100%; box-sizing: border-box;
+      }
+      .dth-left  { display: flex; align-items: center; gap: 16px; }
+      .dth-right { display: flex; align-items: center; gap: 8px; }
+      .dth-center { display: flex; align-items: center; }
+      .dth-menu-btn {
+        width: 56px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+      }
+      .dth-menu-icon { display: flex; flex-direction: column; gap: 3px; }
+      .dth-menu-icon span { display: block; width: 20px; height: 2px; background: #464650; border-radius: 1px; }
+      .dth-search {
+        display: flex; align-items: center; gap: 8px;
+        width: 382px; height: 40px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 4px;
+        background: #fff; cursor: text;
+        font-size: 14px; color: #9d9da0; font-family: var(--font-body);
+      }
+      .dth-logo-text { font-size: 26px; font-weight: 900; color: #121217; letter-spacing: -0.04em; }
+      .dth-logo-mark { color: #ec008c; }
+      .dth-icon-btn {
+        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer; padding: 4px;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+        min-width: 56px;
+      }
+      .dth-icon-circle {
+        width: 32px; height: 32px; border-radius: 50%; background: #f7f7f7;
+        display: flex; align-items: center; justify-content: center; position: relative;
+      }
+      .dth-badge {
+        position: absolute; top: -2px; right: -2px;
+        width: 12px; height: 12px; background: #ec008c; border-radius: 50%;
+        font-size: 8px; font-weight: 700; color: #fff;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .dth-cart-btn {
+        display: flex; align-items: center; gap: 8px;
+        height: 40px; padding: 0 16px;
+        border: 1px solid #ec008c; border-radius: 4px;
+        background: #fff; cursor: pointer; font-family: var(--font-body);
+        font-size: 14px; font-weight: 500; color: #22222b;
+      }
+
+      /* ── Category nav ── */
+      .dt-nav {
+        display: flex; align-items: center; gap: 8px;
+        height: 60px; padding: 0 24px; overflow-x: auto;
+        background: #fff; border-bottom: 1px solid #e1e1e4; width: 100%;
+        box-sizing: border-box;
+      }
+      .dt-nav::-webkit-scrollbar { display: none; }
+      .dt-nav-pill {
+        flex-shrink: 0; height: 36px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 18px;
+        font-size: 16px; font-weight: 500; color: #22222b;
+        background: #fff; cursor: pointer; white-space: nowrap;
+        display: flex; align-items: center;
+      }
+      .dt-nav-pill.active { border: 2px solid #464650; font-weight: 700; }
+
+      /* ── Mobile top bar hidden ── */
+      .top-bar { display: none; }
+
+      /* ── Page ── */
+      .page { max-width: none; background: #fff; min-height: calc(100dvh - 130px); box-shadow: none; }
+
+      /* ── Desktop back button (VpButton ghost sm) ── */
+      .dt-back {
+        display: inline-flex; align-items: center; gap: 6px;
+        height: 32px; padding: 0 12px;
+        background: transparent; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 14px; font-weight: 700;
+        color: var(--color-text-primary); font-family: var(--font-heading);
+        transition: background 0.15s; align-self: flex-start;
+      }
+      .dt-back:hover { background: var(--color-bg-subtle); }
+      .dt-back:active { background: #eff0f1; }
+      .dt-back:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+
+      /* ── Content: 845px centered column ── */
+      .content {
+        max-width: 845px; margin: 0 auto;
+        padding: 24px 0 40px; gap: 16px;
+      }
+      .content-main { display: contents; }
+
+      /* ── Card two-column layout ── */
+      .product-card {
+        display: flex; flex-direction: row; overflow: visible;
+        padding: 16px; gap: 24px; align-items: flex-start;
+      }
+      /* Desktop keeps 1px border on selected (override mobile 2px) */
+      .product-card.selected { border-width: 1px; }
+      /* Left column: product info, fixed 390px */
+      .card-top { flex: 0 0 390px; min-width: 390px; padding: 0; }
+      /* Right column: fields, fixed 390px, always visible */
+      .card-expand {
+        flex: 0 0 390px !important; min-width: 0 !important;
+        max-height: none !important; overflow: visible !important;
+        opacity: 1 !important; padding: 0 !important; display: flex !important;
+      }
+      .expand-inner {
+        border-top: none !important; padding-top: 0 !important;
+        flex: 1; gap: 24px;
+      }
+
+      /* ── Disabled field: no opacity, grey bg only ── */
+      .vp-field-trigger.disabled { opacity: 1; }
+      .vp-field-trigger.disabled .vp-field-value { color: var(--color-text-placeholder); }
+
+      /* ── VpFieldTextArea ── */
+      .vp-textarea-wrap { display: flex; flex-direction: column; gap: 4px; margin-top: 12px; }
+      .vp-textarea-label { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); font-family: var(--font-body); }
+      .vp-textarea {
+        width: 100%; min-height: 160px; resize: vertical;
+        border: 1px solid #e2e2e5; border-radius: 4px;
+        padding: 8px 12px; box-sizing: border-box;
+        font-family: var(--font-body); font-size: 16px;
+        color: var(--color-text-primary); background: #fff;
+        outline: none; transition: border-color 0.15s;
+      }
+      .vp-textarea:focus { border-color: var(--color-text-primary); }
+      .vp-textarea::placeholder { color: var(--color-text-placeholder); }
+
+      /* ── Product price visible ── */
+      .product-price { display: flex; }
+
+      /* ── Footer hidden, desktop CTA shown ── */
+      .footer { display: none; }
+      .dt-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+      .dt-divider { height: 1px; background: #e2e2e5; border: none; margin: 0 0 24px; width: 100%; }
+      .dt-cta-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 48px; padding: 0 32px;
+        background: var(--color-brand); color: #fff; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 16px; font-weight: 700;
+        font-family: var(--font-body); transition: background 0.15s;
+      }
+      .dt-cta-btn:hover:not(:disabled) { background: var(--color-brand-tap); }
+      .dt-cta-btn:disabled { background: #c9c9cc; color: #fff; cursor: not-allowed; }
+
+      /* ── Bottom sheet → centered modal ── */
+      .sheet-overlay { align-items: center; justify-content: center; padding: 24px; }
+      .bottom-sheet {
+        border-radius: 8px; max-width: 480px; width: 100%;
+        transform: scale(0.95); opacity: 0; max-height: 70vh;
+        transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
+      }
+      .sheet-overlay.open .bottom-sheet { transform: scale(1); opacity: 1; }
+      .sheet-drag-area { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ─── Desktop Header ──────────────────────────────────────────── -->
+  <header class="dt-header">
+    <div class="dth-left">
+      <button class="dth-menu-btn" aria-label="Menu">
+        <div class="dth-menu-icon"><span></span><span></span><span></span></div>
+        Menu
+      </button>
+      <div class="dth-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#9d9da0" stroke-width="1.5"/><path d="M20 20l-3-3" stroke="#9d9da0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Rechercher sur Veepee
+      </div>
+    </div>
+    <div class="dth-center">
+      <span class="dth-logo-text"><span class="dth-logo-mark">v</span>eepee</span>
+    </div>
+    <div class="dth-right">
+      <button class="dth-icon-btn" aria-label="Notifications">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dth-badge">1</span>
+        </div>
+        Notifications
+      </button>
+      <button class="dth-icon-btn" aria-label="Parrainage">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#464650" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Parrainage
+      </button>
+      <button class="dth-cart-btn" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="#22222b" stroke-width="1.5"/><path d="M16 10a4 4 0 01-8 0" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Mon panier
+      </button>
+    </div>
+  </header>
+  <!-- ─── Desktop Nav ───────────────────────────────────────────────── -->
+  <nav class="dt-nav">
+    <button class="dt-nav-pill active">Accueil</button>
+    <button class="dt-nav-pill">Mode</button>
+    <button class="dt-nav-pill">Chaussures</button>
+    <button class="dt-nav-pill">Maison</button>
+    <button class="dt-nav-pill">Voyage</button>
+    <button class="dt-nav-pill">Beauté</button>
+    <button class="dt-nav-pill">Loisir</button>
+    <button class="dt-nav-pill">Sport</button>
+  </nav>
+  <div class="page">
+
+    <!-- Top App Bar -->
+    <div class="top-bar">
+      <button class="icon-btn" onclick="history.back()" aria-label="Retour">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <span class="top-bar-title">Retourner un produit</span>
+      <button class="icon-btn" aria-label="Panier (1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="cart-badge">1</span>
+      </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <!-- Desktop back button -->
+      <button class="dt-back" onclick="history.back()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Revenir à mes commandes
+      </button>
+      <div class="content-main">
+      <div class="page-header">
+        <h1 class="page-title">Effectuer un retour</h1>
+        <span class="order-meta"><strong>Nom de la vente :</strong> CELIO124</span>
+        <span class="order-meta"><strong>Numéro de commande :</strong> 0000000000</span>
+      </div>
+      <p class="instruction">Sélectionner le ou les produit(s) ainsi que la raison de votre retour&nbsp;:</p>
+
+      <div class="cards-list">
+
+        <!-- Card 0 — Teeshirt -->
+        <div class="product-card" id="card-0" tabindex="0" role="checkbox" aria-checked="false" onclick="toggleCard(0)">
+          <div class="card-top">
+            <div class="card-checkbox" aria-hidden="true"></div>
+            <div class="product-thumb tshirt"></div>
+            <div class="product-info">
+              <span class="product-brand">Celio</span>
+              <span class="product-title">Teeshirt - 100% coton - noir</span>
+              <span class="product-variant">Taille M - 42 (FR) · Quantité : 1</span>
+              <div class="product-price">
+                <span class="price-int">39,</span><span class="price-dec">99</span><span class="price-currency">&nbsp;€</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand" id="expand-0">
+            <div class="expand-inner">
+              <!-- Quantité -->
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Quantité</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'qty',0)" role="button" aria-haspopup="listbox" aria-label="Quantité : 1">
+                  <span class="vp-field-value" id="qty-display-0">1</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <!-- Raison -->
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Pour quelle raison ?</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'reason',0)" role="button" aria-haspopup="listbox" aria-label="Raison : non sélectionnée">
+                  <span class="vp-field-value placeholder" id="reason-display-0">Sélectionnez dans la liste</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <!-- Textarea (shown on desktop when reason selected) -->
+              <div class="vp-textarea-wrap" id="comment-field-0" style="display:none">
+                <label class="vp-textarea-label">Racontez-nous ce qui s'est passé</label>
+                <textarea class="vp-textarea" placeholder="Donnez-nous plus de détails" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 1 — Blazer -->
+        <div class="product-card" id="card-1" tabindex="0" role="checkbox" aria-checked="false" onclick="toggleCard(1)">
+          <div class="card-top">
+            <div class="card-checkbox" aria-hidden="true"></div>
+            <div class="product-thumb blazer"></div>
+            <div class="product-info">
+              <span class="product-brand">Celio</span>
+              <span class="product-title">Blazer - 100% coton - noir et blanc</span>
+              <span class="product-variant">Taille M - 42 (ES) · Quantité : 3</span>
+              <div class="product-price">
+                <span class="price-int">39,</span><span class="price-dec">99</span><span class="price-currency">&nbsp;€</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand" id="expand-1">
+            <div class="expand-inner">
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Quantité</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'qty',1)" role="button" aria-haspopup="listbox" aria-label="Quantité : 1">
+                  <span class="vp-field-value" id="qty-display-1">1</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Pour quelle raison ?</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'reason',1)" role="button" aria-haspopup="listbox" aria-label="Raison : non sélectionnée">
+                  <span class="vp-field-value placeholder" id="reason-display-1">Sélectionnez dans la liste</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-textarea-wrap" id="comment-field-1" style="display:none">
+                <label class="vp-textarea-label">Racontez-nous ce qui s'est passé</label>
+                <textarea class="vp-textarea" placeholder="Donnez-nous plus de détails" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — Polo -->
+        <div class="product-card" id="card-2" tabindex="0" role="checkbox" aria-checked="false" onclick="toggleCard(2)">
+          <div class="card-top">
+            <div class="card-checkbox" aria-hidden="true"></div>
+            <div class="product-thumb tshirt"></div>
+            <div class="product-info">
+              <span class="product-brand">Lacoste</span>
+              <span class="product-title">Polo classique - piqué - blanc</span>
+              <span class="product-variant">Taille L - 44 (FR) · Quantité : 2</span>
+              <div class="product-price">
+                <span class="price-int">89,</span><span class="price-dec">99</span><span class="price-currency">&nbsp;€</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand" id="expand-2">
+            <div class="expand-inner">
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Quantité</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'qty',2)" role="button" aria-haspopup="listbox" aria-label="Quantité : 1">
+                  <span class="vp-field-value" id="qty-display-2">1</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Pour quelle raison ?</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'reason',2)" role="button" aria-haspopup="listbox" aria-label="Raison : non sélectionnée">
+                  <span class="vp-field-value placeholder" id="reason-display-2">Sélectionnez dans la liste</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-textarea-wrap" id="comment-field-2" style="display:none">
+                <label class="vp-textarea-label">Racontez-nous ce qui s'est passé</label>
+                <textarea class="vp-textarea" placeholder="Donnez-nous plus de détails" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 — Pantalon -->
+        <div class="product-card" id="card-3" tabindex="0" role="checkbox" aria-checked="false" onclick="toggleCard(3)">
+          <div class="card-top">
+            <div class="card-checkbox" aria-hidden="true"></div>
+            <div class="product-thumb blazer"></div>
+            <div class="product-info">
+              <span class="product-brand">Dockers</span>
+              <span class="product-title">Pantalon chino - coupe slim - kaki</span>
+              <span class="product-variant">Taille 32 × 32 · Quantité : 1</span>
+              <div class="product-price">
+                <span class="price-int">59,</span><span class="price-dec">90</span><span class="price-currency">&nbsp;€</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-expand" id="expand-3">
+            <div class="expand-inner">
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Quantité</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger disabled" tabindex="-1" role="button" aria-haspopup="listbox" aria-label="Quantité : 1" aria-disabled="true">
+                  <span class="vp-field-value" id="qty-display-3">1</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-field">
+                <div class="vp-field-label-row">
+                  <span class="vp-field-label">Pour quelle raison ?</span>
+                  <span class="vp-field-optional">(Optionnel)</span>
+                </div>
+                <div class="vp-field-trigger" tabindex="0" onclick="openSheet(event,'reason',3)" role="button" aria-haspopup="listbox" aria-label="Raison : non sélectionnée">
+                  <span class="vp-field-value placeholder" id="reason-display-3">Sélectionnez dans la liste</span>
+                  <span class="vp-field-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                </div>
+              </div>
+              <div class="vp-textarea-wrap" id="comment-field-3" style="display:none">
+                <label class="vp-textarea-label">Racontez-nous ce qui s'est passé</label>
+                <textarea class="vp-textarea" placeholder="Donnez-nous plus de détails" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div><!-- /.content-main -->
+
+      <!-- Desktop CTA -->
+      <div class="dt-cta">
+        <hr class="dt-divider" />
+        <button class="dt-cta-btn" id="btn-suivant-desk" onclick="onSuivant()" disabled>
+          Suivant
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="btn btn-brand" id="btn-suivant" onclick="onSuivant()">Suivant</button>
+    </div>
+
+  </div>
+
+  <!-- ─── VpSelectList Dropdown (desktop) ─────────────────────────────────── -->
+  <div class="dt-dropdown" id="dt-dropdown" role="listbox"></div>
+
+  <!-- ─── Bottom Sheet ───────────────────────────────────────────────────── -->
+  <div class="sheet-overlay" id="sheet-overlay" onclick="closeSheet()">
+    <div class="bottom-sheet" id="bottom-sheet" onclick="event.stopPropagation()">
+      <div class="sheet-drag-area" onclick="closeSheet()">
+        <div class="sheet-handle"></div>
+      </div>
+      <div class="sheet-header">
+        <span class="sheet-title" id="sheet-title"></span>
+      </div>
+      <div class="sheet-list" id="sheet-list"></div>
+    </div>
+  </div>
+
+  <script>
+    // ─── State ───────────────────────────────────────────────────────────────
+    const selectedCards = new Set();
+    const maxQtys = [1, 3, 2, 1]; // max orderable qty per card
+    const qtys    = ['1', '1', '1', '1'];
+    const reasons = ['', '', '', ''];
+
+    const QTY_OPTIONS = (max) =>
+      Array.from({ length: max }, (_, i) => ({ value: String(i+1), label: String(i+1) }));
+
+    const REASON_GROUPS = [
+      {
+        title: "J'ai changé d'avis",
+        options: [
+          { value: 'color_material',  label: "La couleur / la matière / les finitions me déçoivent" },
+          { value: 'photo_mismatch',  label: "Le produit me déçoit par rapport à la photo" },
+          { value: 'change_mind',     label: "J'ai changé d'avis" },
+          { value: 'order_error',     label: "J'ai fait une erreur en commandant sur le site" },
+          { value: 'too_large',       label: "Le produit est trop grand" },
+          { value: 'too_small',       label: "Le produit est trop petit" },
+        ]
+      },
+      {
+        title: "Il y a eu un problème",
+        options: [
+          { value: 'wrong_product',   label: "Le produit ne correspond pas à ma commande" },
+          { value: 'missing_product', label: "Il manquait un produit" },
+          { value: 'defective',       label: "Le produit présente un défaut de fabrication" },
+          { value: 'damaged',         label: "Le produit est arrivé abîmé/cassé" },
+        ]
+      }
+    ];
+
+    // Active sheet context
+    let activeSheetType = null; // 'qty' | 'reason'
+    let activeCardIndex = null;
+
+    // ─── Card expand/collapse ─────────────────────────────────────────────────
+    function toggleCard(index) {
+      if (selectedCards.has(index)) {
+        selectedCards.delete(index);
+        collapseCard(index);
+      } else {
+        selectedCards.add(index);
+        openCard(index);
+      }
+      updateSuivant();
+    }
+
+    function openCard(index) {
+      const card = document.getElementById('card-' + index);
+      card.classList.add('selected');
+      card.setAttribute('aria-checked', 'true');
+      const expand = document.getElementById('expand-' + index);
+      expand.classList.add('open');
+      expand.addEventListener('click', stopProp);
+      // Set qty trigger state based on max qty
+      const qtyTrigger = document.querySelector(`#expand-${index} .vp-field-trigger`);
+      if (qtyTrigger) {
+        if (maxQtys[index] < 2) {
+          qtyTrigger.classList.add('disabled');
+          qtyTrigger.classList.remove('prefilled');
+          qtyTrigger.removeAttribute('tabindex');
+        } else {
+          qtyTrigger.classList.remove('prefilled', 'disabled');
+        }
+      }
+    }
+    function collapseCard(index) {
+      const card = document.getElementById('card-' + index);
+      card.classList.remove('selected');
+      card.setAttribute('aria-checked', 'false');
+      document.getElementById('expand-' + index).classList.remove('open');
+    }
+    function stopProp(e) { e.stopPropagation(); }
+
+    // ─── Bottom Sheet / Dropdown ──────────────────────────────────────────────
+    const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+
+    function openSheet(e, type, cardIndex) {
+      e.stopPropagation();
+      activeSheetType = type;
+      activeCardIndex = cardIndex;
+
+      const isQty = type === 'qty';
+      if (isQty && maxQtys[cardIndex] < 2) return; // disabled
+      const current = isQty ? qtys[cardIndex] : reasons[cardIndex];
+
+      if (isDesktop()) {
+        if (isQty) showDropdown(e.currentTarget, QTY_OPTIONS(maxQtys[cardIndex]), current);
+        else        showReasonDropdown(e.currentTarget, current);
+        return;
+      }
+
+      // Mobile: bottom sheet
+      document.getElementById('sheet-title').textContent = isQty ? 'Quantité' : 'Raison de votre retour';
+      const list = document.getElementById('sheet-list');
+
+      if (isQty) {
+        list.innerHTML = QTY_OPTIONS(maxQtys[cardIndex]).map(opt => `
+          <button class="list-item ${opt.value === current ? 'selected' : ''}"
+                  data-value="${opt.value}" data-label="${opt.label}">
+            <span class="list-item-text">${opt.label}</span>
+          </button>`).join('');
+      } else {
+        list.innerHTML = REASON_GROUPS.map(group => `
+          <span class="list-section-title">${group.title}</span>
+          ${group.options.map(opt => `
+            <button class="list-item ${opt.value === current ? 'selected' : ''}"
+                    data-value="${opt.value}"
+                    data-label="${opt.label.replace(/"/g, '&quot;')}">
+              <span class="list-item-text">${opt.label}</span>
+            </button>`).join('')}
+        `).join('');
+      }
+
+      list.querySelectorAll('.list-item').forEach(btn => {
+        btn.addEventListener('click', () => selectOption(btn.dataset.value, btn.dataset.label));
+      });
+      const overlay = document.getElementById('sheet-overlay');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        const sel = list.querySelector('.list-item.selected') || list.querySelector('.list-item');
+        if (sel) sel.focus();
+      });
+    }
+
+    function showDropdown(trigger, options, current) {
+      const dd = document.getElementById('dt-dropdown');
+      dd.innerHTML = options.map(opt => `
+        <button class="dt-option ${opt.value === current ? 'selected' : ''}" role="option"
+                aria-selected="${opt.value === current}"
+                data-value="${opt.value}"
+                data-label="${opt.label.replace(/"/g, '&quot;')}">
+          <span class="dt-option-text">${opt.label}</span>
+        </button>`).join('');
+      attachDropdownEvents(dd);
+      positionDropdown(dd, trigger);
+    }
+
+    function showReasonDropdown(trigger, current) {
+      const dd = document.getElementById('dt-dropdown');
+      dd.innerHTML = REASON_GROUPS.map(group => `
+        <div class="dt-option-header">${group.title}</div>
+        ${group.options.map(opt => `
+          <button class="dt-option ${opt.value === current ? 'selected' : ''}" role="option"
+                  aria-selected="${opt.value === current}"
+                  data-value="${opt.value}"
+                  data-label="${opt.label.replace(/"/g, '&quot;')}">
+            <span class="dt-option-text">${opt.label}</span>
+          </button>`).join('')}
+      `).join('');
+      attachDropdownEvents(dd);
+      positionDropdown(dd, trigger);
+    }
+
+    function attachDropdownEvents(dd) {
+      dd.querySelectorAll('.dt-option').forEach(btn => {
+        btn.addEventListener('click', ev => {
+          ev.stopPropagation();
+          selectOption(btn.dataset.value, btn.dataset.label);
+        });
+        btn.addEventListener('keydown', ev => {
+          const opts = Array.from(dd.querySelectorAll('.dt-option'));
+          const i = opts.indexOf(ev.target);
+          if (ev.key === 'ArrowDown') { ev.preventDefault(); (opts[i+1] || opts[0]).focus(); }
+          else if (ev.key === 'ArrowUp') { ev.preventDefault(); (opts[i-1] || opts[opts.length-1]).focus(); }
+          else if (ev.key === 'Escape') { ev.preventDefault(); closeDropdown(); }
+          else if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); ev.target.click(); }
+        });
+      });
+    }
+
+    function positionDropdown(dd, trigger) {
+      const rect = trigger.getBoundingClientRect();
+      dd.style.top   = (rect.bottom + 4) + 'px';
+      dd.style.left  = rect.left + 'px';
+      dd.style.width = rect.width + 'px';
+      dd.classList.add('open');
+      requestAnimationFrame(() => {
+        const sel = dd.querySelector('.dt-option.selected') || dd.querySelector('.dt-option');
+        if (sel) sel.focus();
+      });
+    }
+
+    function closeDropdown() {
+      document.getElementById('dt-dropdown').classList.remove('open');
+      activeSheetType = null;
+      activeCardIndex = null;
+    }
+
+    function closeSheet(returnFocusId) {
+      document.getElementById('sheet-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      closeDropdown();
+      if (returnFocusId) {
+        const el = document.getElementById(returnFocusId);
+        if (el) el.focus();
+      }
+    }
+
+    function selectOption(value, label) {
+      const type = activeSheetType;
+      const idx  = activeCardIndex;
+
+      // Update visual selection in sheet list or dropdown
+      document.querySelectorAll('#sheet-list .list-item').forEach(btn => {
+        btn.classList.toggle('selected', btn.dataset.value === value);
+      });
+      document.querySelectorAll('#dt-dropdown .dt-option').forEach(btn => {
+        const sel = btn.dataset.value === value;
+        btn.classList.toggle('selected', sel);
+        btn.setAttribute('aria-selected', sel);
+      });
+
+      if (type === 'qty') {
+        qtys[idx] = value;
+        const disp = document.getElementById('qty-display-' + idx);
+        disp.textContent = label;
+        const trigger = disp.closest('.vp-field-trigger');
+        if (trigger) trigger.setAttribute('aria-label', `Quantité : ${label}`);
+      } else {
+        reasons[idx] = value;
+        const el = document.getElementById('reason-display-' + idx);
+        el.textContent = label;
+        el.classList.remove('placeholder');
+        const trigger = el.closest('.vp-field-trigger');
+        if (trigger) trigger.setAttribute('aria-label', `Raison : ${label}`);
+        // Show textarea on desktop when reason is selected
+        const commentField = document.getElementById('comment-field-' + idx);
+        if (commentField && isDesktop()) {
+          commentField.style.display = value ? 'flex' : 'none';
+        }
+      }
+
+      setTimeout(() => closeSheet(), 120);
+      updateSuivant();
+    }
+
+    // Close dropdown on outside click
+    document.addEventListener('click', e => {
+      const dd = document.getElementById('dt-dropdown');
+      if (dd.classList.contains('open') && !dd.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    // ─── Suivant gate ─────────────────────────────────────────────────────────
+    function updateSuivant() {
+      const hasSelection = selectedCards.size > 0;
+      document.getElementById('btn-suivant').disabled = !hasSelection;
+      const deskBtn = document.getElementById('btn-suivant-desk');
+      if (deskBtn) deskBtn.disabled = !hasSelection;
+    }
+    updateSuivant(); // init state on load
+
+    function onSuivant() {
+      window.location.href = '../ReturnMethod/ReturnMethod.preview.html';
+    }
+
+    // ─── Keyboard handlers ────────────────────────────────────────────────────
+    // Cards: Enter/Space to toggle
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+
+    // Field triggers: Enter/Space to open sheet
+    document.querySelectorAll('.vp-field-trigger').forEach(trigger => {
+      trigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        }
+      });
+    });
+
+    // Bottom sheet: focus trap + arrow key navigation in list
+    document.getElementById('sheet-overlay').addEventListener('keydown', e => {
+      const overlay = document.getElementById('sheet-overlay');
+      if (!overlay.classList.contains('open')) return;
+
+      const items = Array.from(document.querySelectorAll('#sheet-list .list-item'));
+      const focused = document.activeElement;
+      const idx = items.indexOf(focused);
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeSheet();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = items[idx + 1] || items[0];
+        next.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = items[idx - 1] || items[items.length - 1];
+        prev.focus();
+      } else if (e.key === 'Tab') {
+        // Trap focus inside sheet
+        const focusable = Array.from(document.getElementById('bottom-sheet')
+          .querySelectorAll('button, [tabindex="0"]'));
+        if (!focusable.length) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

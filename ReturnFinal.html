@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Return Final — BloomUI Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body { background: #fff; font-size: 16px; }
+
+    /* ─── BloomUI tokens ─────────────────────────────────────────────────── */
+    :root {
+      --color-brand: #ec008c;
+      --color-brand-hover: #d90082;
+      --color-brand-tap: #ab0067;
+      --color-brand-light: #fff2f9;
+      --color-text-primary: #31313a;
+      --color-text-secondary: #69696f;
+      --color-text-disabled: #c9c9cc;
+      --color-text-placeholder: #9d9da0;
+      --color-bg-page: #ffffff;
+      --color-bg-subtle: #f5f5f6;
+      --color-border: #e0e0e3;
+      --color-border-secondary: #69696f;
+      --color-border-tertiary: #c9c9cc;
+      --color-error: #dd1f29;
+      --color-success: #0f9f40;
+      --font-heading: "VP Next", Arial, sans-serif;
+      --font-body: "HK Grotesk", Arial, sans-serif;
+      --font-condensed: "VP Condensed Next", Impact, Arial, sans-serif;
+      --radius-sm: 4px; --radius-md: 8px; --radius-full: 9999px;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-body);
+      color: var(--color-text-primary);
+      background: var(--color-bg-page);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Top App Bar ────────────────────────────────────────────────────── */
+    .top-bar {
+      display: flex; align-items: center; gap: 8px;
+      height: 56px; padding: 0 16px;
+      background: #fff; border-bottom: 1px solid var(--color-border);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .icon-btn {
+      width: 40px; height: 40px; border: none; background: transparent;
+      border-radius: 9999px; cursor: pointer; color: var(--color-text-primary);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; flex-shrink: 0;
+    }
+    .icon-btn:hover { background: var(--color-bg-subtle); }
+    .top-bar-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-body); }
+    .cart-badge {
+      position: absolute; top: 4px; right: 4px;
+      width: 14px; height: 14px; background: var(--color-brand);
+      border-radius: 9999px; font-size: 8px; font-weight: 700; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ─── Content ────────────────────────────────────────────────────────── */
+    .content { flex: 1; padding: 24px 16px; display: flex; flex-direction: column; gap: 32px; }
+    .page-title { font-family: var(--font-heading); font-size: 26px; font-weight: 500; line-height: 1.2; }
+
+    /* ─── Stepper ────────────────────────────────────────────────────────── */
+    .stepper-section { display: flex; flex-direction: column; gap: 24px; }
+    .stepper-heading { font-family: var(--font-heading); font-size: 20px; font-weight: 500; }
+    .stepper-row { display: flex; align-items: flex-start; }
+    .step-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; text-align: center; }
+    .step-bubble {
+      width: 32px; height: 32px;
+      border-radius: 9999px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-page);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-item.active .step-bubble { background: var(--color-brand); border-color: var(--color-brand); }
+    .step-num { font-size: 16px; font-weight: 700; color: var(--color-text-primary); }
+    .step-item.active .step-num { color: #ffffff; }
+    .step-label { font-size: 12px; font-weight: 500; line-height: 1.3; color: var(--color-text-primary); }
+    .step-item.active .step-label { color: var(--color-brand); }
+    .step-sub { font-size: 12px; font-weight: 400; line-height: 1.3; color: var(--color-text-secondary); }
+    .step-connector {
+      flex-shrink: 0; width: 32px; height: 2px; background: var(--color-border);
+      border-radius: 9999px; margin-top: 15px;
+    }
+
+    /* ─── Instructions ───────────────────────────────────────────────────── */
+    .instructions { display: flex; flex-direction: column; gap: 16px; }
+    .instruction-step { font-size: 16px; font-weight: 400; line-height: 1.5; }
+    .instruction-heading { font-size: 18px; font-weight: 500; color: #464650; }
+    .body-text { font-size: 16px; font-weight: 400; line-height: 1.5; }
+
+    /* ─── Divider ────────────────────────────────────────────────────────── */
+    .divider { border: none; border-top: 1px solid var(--color-border); }
+
+    /* ─── Section ────────────────────────────────────────────────────────── */
+    .section { display: flex; flex-direction: column; gap: 16px; }
+    .section-title { font-family: var(--font-heading); font-size: 20px; font-weight: 500; }
+
+    /* ─── Product Card ───────────────────────────────────────────────────── */
+    .product-card { display: flex; flex-direction: column; gap: 8px; }
+    .product-card-top { display: flex; gap: 16px; align-items: flex-start; }
+    .product-thumb { width: 104px; height: 104px; border-radius: 8px; background: #d6d6d6; flex-shrink: 0; }
+    .product-info { flex: 1; display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+    .product-brand { font-size: 16px; font-weight: 700; }
+    .product-title { font-size: 14px; line-height: 1.4; }
+    .product-variant { font-size: 14px; color: var(--color-text-secondary); }
+    .product-meta-list { display: flex; flex-direction: column; gap: 2px; }
+    .product-meta { display: block; font-size: 14px; line-height: 20px; }
+    .product-meta strong { font-weight: 600; }
+
+    /* ─── Summary Card (carrier) ─────────────────────────────────────────── */
+    .summary-card {
+      display: flex; align-items: center; gap: 16px; padding: 16px;
+      border: 1px solid var(--color-border); border-radius: 8px;
+    }
+    .carrier-logo { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .carrier-details { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+    .carrier-name { font-size: 16px; font-weight: 700; }
+    .carrier-fee { font-size: 14px; color: var(--color-text-secondary); }
+
+    /* ─── Important box ──────────────────────────────────────────────────── */
+    .important-box {
+      padding: 16px;
+      background: linear-gradient(135deg, #f0ebff 0%, #e8e0ff 100%);
+      border-radius: 8px;
+    }
+    .important-text { font-size: 16px; font-weight: 400; line-height: 1.5; }
+    .important-text strong { font-weight: 700; }
+
+    /* ─── Keyboard focus ─────────────────────────────────────────────────── */
+    *:focus { outline: none; }
+    .icon-btn:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 2px;
+    }
+    .btn:focus-visible,
+    .btn-download:focus-visible {
+      outline: 2px solid var(--color-brand);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 5px rgba(236,0,140,0.18);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────────────── */
+    .footer {
+      padding: 16px; border-top: 1px solid var(--color-border);
+      background: #fff; position: sticky; bottom: 0;
+    }
+    .btn {
+      display: flex; align-items: center; justify-content: center;
+      height: 44px; width: 100%; border-radius: 4px;
+      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      cursor: pointer; border: 1px solid transparent; transition: background .15s;
+    }
+    .btn-brand { background: #ec008c; color: #fff; border-color: #ec008c; }
+    .btn-brand:hover { background: #d90082; border-color: #d90082; }
+    .btn-download {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 40px; padding: 0 32px; border-radius: 4px;
+      font-family: var(--font-heading); font-size: 16px; font-weight: 700;
+      cursor: pointer; border: none;
+      background: #ec008c; color: #fff;
+      transition: background .15s;
+      align-self: flex-start;
+    }
+    .btn-download:hover { background: #d90082; }
+
+    /* ─── Desktop-only elements (hidden on mobile) ───────────────────────── */
+    .dt-header     { display: none; }
+    .dt-nav        { display: none; }
+    .dt-back       { display: none; }
+    .dt-cta        { display: none; }
+
+    /* ─── Desktop layout (≥ 1024px) ─────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      body { background: #fff; }
+
+      /* ── Veepee header ── */
+      .dt-header {
+        display: flex; align-items: center; justify-content: space-between;
+        height: 70px; padding: 0 24px;
+        background: #fff; border-bottom: 1px solid #e1e1e4;
+        position: sticky; top: 0; z-index: 100; width: 100%; box-sizing: border-box;
+      }
+      .dth-left  { display: flex; align-items: center; gap: 16px; }
+      .dth-right { display: flex; align-items: center; gap: 8px; }
+      .dth-center { display: flex; align-items: center; }
+      .dth-menu-btn {
+        width: 56px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+      }
+      .dth-menu-icon { display: flex; flex-direction: column; gap: 3px; }
+      .dth-menu-icon span { display: block; width: 20px; height: 2px; background: #464650; border-radius: 1px; }
+      .dth-search {
+        display: flex; align-items: center; gap: 8px;
+        width: 382px; height: 40px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 4px;
+        background: #fff; cursor: text;
+        font-size: 14px; color: #9d9da0; font-family: var(--font-body);
+      }
+      .dth-logo-text { font-size: 26px; font-weight: 900; color: #121217; letter-spacing: -0.04em; }
+      .dth-logo-mark { color: #ec008c; }
+      .dth-icon-btn {
+        display: flex; flex-direction: column; align-items: center; gap: 4px;
+        background: none; border: none; cursor: pointer; padding: 4px;
+        font-size: 12px; font-weight: 500; color: #464650; font-family: var(--font-body);
+        min-width: 56px;
+      }
+      .dth-icon-circle {
+        width: 32px; height: 32px; border-radius: 50%; background: #f7f7f7;
+        display: flex; align-items: center; justify-content: center; position: relative;
+      }
+      .dth-badge {
+        position: absolute; top: -2px; right: -2px;
+        width: 12px; height: 12px; background: #ec008c; border-radius: 50%;
+        font-size: 8px; font-weight: 700; color: #fff;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .dth-cart-btn {
+        display: flex; align-items: center; gap: 8px;
+        height: 40px; padding: 0 16px;
+        border: 1px solid #ec008c; border-radius: 4px;
+        background: #fff; cursor: pointer; font-family: var(--font-body);
+        font-size: 14px; font-weight: 500; color: #22222b;
+      }
+
+      /* ── Category nav ── */
+      .dt-nav {
+        display: flex; align-items: center; gap: 8px;
+        height: 60px; padding: 0 24px; overflow-x: auto;
+        background: #fff; border-bottom: 1px solid #e1e1e4; width: 100%;
+        box-sizing: border-box;
+      }
+      .dt-nav::-webkit-scrollbar { display: none; }
+      .dt-nav-pill {
+        flex-shrink: 0; height: 36px; padding: 0 16px;
+        border: 1px solid #e1e1e4; border-radius: 18px;
+        font-size: 16px; font-weight: 500; color: #22222b;
+        background: #fff; cursor: pointer; white-space: nowrap;
+        display: flex; align-items: center;
+      }
+      .dt-nav-pill.active { border: 2px solid #464650; font-weight: 700; }
+
+      /* ── Mobile top bar hidden ── */
+      .top-bar { display: none; }
+
+      /* ── Page ── */
+      .page { max-width: none; background: #fff; min-height: calc(100dvh - 130px); box-shadow: none; }
+
+      /* ── Desktop back button (VpButton ghost sm) ── */
+      .dt-back {
+        display: inline-flex; align-items: center; gap: 6px;
+        height: 32px; padding: 0 12px;
+        background: transparent; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 14px; font-weight: 700;
+        color: var(--color-text-primary); font-family: var(--font-heading);
+        transition: background 0.15s; align-self: flex-start;
+      }
+      .dt-back:hover { background: var(--color-bg-subtle); }
+      .dt-back:active { background: #eff0f1; }
+      .dt-back:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+
+      /* ── Content: 845px centered ── */
+      .content {
+        max-width: 845px; margin: 0 auto;
+        padding: 24px 0 40px; gap: 24px;
+        flex-direction: column;
+      }
+
+      /* ── Footer hidden, desktop CTA shown ── */
+      .footer { display: none; }
+      .dt-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+      .dt-divider { height: 1px; background: #e2e2e5; border: none; margin: 0 0 24px; width: 100%; }
+      .dt-cta-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 48px; padding: 0 32px;
+        background: var(--color-brand); color: #fff; border: none; border-radius: 4px;
+        cursor: pointer; font-size: 16px; font-weight: 700;
+        font-family: var(--font-body); transition: background 0.15s;
+      }
+      .dt-cta-btn:hover:not(:disabled) { background: var(--color-brand-tap); }
+      .dt-cta-btn:disabled { background: #c9c9cc; color: #fff; cursor: not-allowed; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ─── Desktop Header ──────────────────────────────────────────── -->
+  <header class="dt-header">
+    <div class="dth-left">
+      <button class="dth-menu-btn" aria-label="Menu">
+        <div class="dth-menu-icon"><span></span><span></span><span></span></div>
+        Menu
+      </button>
+      <div class="dth-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#9d9da0" stroke-width="1.5"/><path d="M20 20l-3-3" stroke="#9d9da0" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Rechercher sur Veepee
+      </div>
+    </div>
+    <div class="dth-center">
+      <span class="dth-logo-text"><span class="dth-logo-mark">v</span>eepee</span>
+    </div>
+    <div class="dth-right">
+      <button class="dth-icon-btn" aria-label="Notifications">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="dth-badge">1</span>
+        </div>
+        Notifications
+      </button>
+      <button class="dth-icon-btn" aria-label="Parrainage">
+        <div class="dth-icon-circle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="#464650" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#464650" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Parrainage
+      </button>
+      <button class="dth-cart-btn" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="#22222b" stroke-width="1.5"/><path d="M16 10a4 4 0 01-8 0" stroke="#22222b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Mon panier
+      </button>
+    </div>
+  </header>
+  <!-- ─── Desktop Nav ─────────────────────────────────────────────── -->
+  <nav class="dt-nav">
+    <button class="dt-nav-pill active">Accueil</button>
+    <button class="dt-nav-pill">Mode</button>
+    <button class="dt-nav-pill">Chaussures</button>
+    <button class="dt-nav-pill">Maison</button>
+    <button class="dt-nav-pill">Voyage</button>
+    <button class="dt-nav-pill">Beauté</button>
+    <button class="dt-nav-pill">Loisir</button>
+    <button class="dt-nav-pill">Sport</button>
+  </nav>
+  <div class="page">
+
+    <!-- Top App Bar -->
+    <div class="top-bar">
+      <button class="icon-btn" onclick="onClose()" aria-label="Fermer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <span class="top-bar-title">Retourner un produit</span>
+      <button class="icon-btn" aria-label="Panier (1)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="cart-badge">1</span>
+      </button>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <!-- Desktop back button -->
+      <button class="dt-back" onclick="history.back()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Retour à mes commandes
+      </button>
+
+      <!-- Stepper section -->
+      <div class="stepper-section">
+        <span class="stepper-heading">État de votre retour</span>
+
+        <div class="stepper-row">
+          <!-- Step 1 — Active -->
+          <div class="step-item active">
+            <div class="step-bubble"><span class="step-num">1</span></div>
+            <span class="step-label">Retour demandé</span>
+          </div>
+          <div class="step-connector"></div>
+          <!-- Step 2 -->
+          <div class="step-item">
+            <div class="step-bubble"><span class="step-num">2</span></div>
+            <span class="step-label">Arrivé de vos articles</span>
+            <span class="step-sub">dans nos entrepôts</span>
+          </div>
+          <div class="step-connector"></div>
+          <!-- Step 3 -->
+          <div class="step-item">
+            <div class="step-bubble"><span class="step-num">3</span></div>
+            <span class="step-label">Retour approuvé</span>
+            <span class="step-sub">Remboursement validé</span>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+          <p class="instruction-step">1. Imprimez votre bon.</p>
+          <button class="btn-download">Télécharger vos documents de retour</button>
+          <p class="instruction-heading">Et ensuite ?</p>
+          <p class="body-text">2. Préparez votre colis en utilisant l'emballage que vous avez reçu ou un autre qui soit adapté aux articles que vous désirez retourner. Imprimer votre bon de retour et placer-le dans le colis en compagnie de vos articles. Collez l'étiquette comportant l'adresse de livraison à l'extérieur de votre colis.</p>
+          <p class="body-text">3. Faites parvenir le colis au point de dépôt Mondial Relay de votre choix. Vous avez 14 jours pour le faire.</p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Votre retour (product) -->
+      <div class="section">
+        <h1 class="page-title">Votre retour :</h1>
+        <div class="product-card">
+          <div class="product-card-top">
+            <div class="product-thumb"></div>
+            <div class="product-info">
+              <span class="product-brand">Celio</span>
+              <span class="product-title">Blazer - 100% coton - noir et blanc</span>
+              <span class="product-variant">Taille M - 42 (ES)</span>
+            </div>
+          </div>
+          <div class="product-meta-list">
+            <span class="product-meta"><strong>Quantité retournée :</strong> 1</span>
+            <span class="product-meta"><strong>Motif du retour :</strong> J'ai changé d'avis</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Mode de retour -->
+      <div class="section">
+        <h2 class="section-title">Mode de retour</h2>
+        <div class="summary-card">
+          <div class="carrier-logo">
+            <img src="../../assets/logos/mondial-relay.svg" width="32" height="32" alt="Mondial Relay" style="object-fit:contain;display:block;" />
+          </div>
+          <div class="carrier-details">
+            <span class="carrier-name">Mondial Relay</span>
+            <span class="carrier-fee">6,90 € de frais de retour</span>
+          </div>
+        </div>
+        <p class="body-text">Remettre votre colis à n'importe quel point Mondial Relay dans les 14 prochains jours. Nous vous recommandons de vérifier les heures d'ouverture de l'endroit que vous avez choisi avant de vous y rendre.</p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Votre remboursement -->
+      <div class="section">
+        <h2 class="section-title">Votre remboursement :</h2>
+        <p class="body-text">Vous recevrez votre remboursement sous forme de bon d'achat dans votre espace « Mes promotions et bons d'achat ».</p>
+        <p class="body-text">La valeur du produit moins l'étiquette de retour prépayée pour le mode de retour que vous avez choisi. Vous pouvez vous attendre à recevoir votre remboursement dans un délai maximum de 14 jours après réception de l'article. Nous remboursons les frais de port uniquement si le retour concerne une commande complète.</p>
+        <div class="important-box">
+          <p class="important-text"><strong>Important.</strong> N'oubliez pas d'imprimer le bordereau de retour et de le placer dans la boîte avec les articles que vous souhaitez retourner.</p>
+        </div>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="dt-cta">
+        <hr class="dt-divider" />
+        <button class="dt-cta-btn" onclick="onMyOrders()">Mes commandes
+        </button>
+      </div>
+
+    </div><!-- /.content -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="btn btn-brand" onclick="onMyOrders()">Mes commandes</button>
+    </div>
+
+  </div>
+
+  <script>
+    function onClose() { window.history.back(); }
+    function onMyOrders() { alert('Redirection vers Mes commandes…'); }
+  </script>
+</body>
+</html>
