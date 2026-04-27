@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BloomUI — Order Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <button class="header__back" aria-label="Go back">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12.5 15L7.5 10L12.5 5"/>
+      </svg>
+    </button>
+    <span class="header__title">Confirmation</span>
+    <button class="header__action" aria-label="Open help">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="10" r="7"/>
+        <path d="M8.8 7.6a1.7 1.7 0 1 1 2.55 1.47c-.93.52-1.35 1-1.35 1.93"/>
+        <path d="M10 13.6h.01"/>
+      </svg>
+    </button>
+  </header>
+
+  <main class="confirmation-page">
+    <section class="confirmation-hero">
+      <div class="confirmation-hero__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.5 10.5l3.2 3.2L15.5 6"/>
+        </svg>
+      </div>
+      <span class="tag tag--soft-success">Paiement confirmé</span>
+      <h1 class="confirmation-hero__title">Merci, Mathieu&nbsp;!</h1>
+      <p class="description__text confirmation-hero__text">
+        Votre achat a bien été enregistré. Votre panier contient une commande <strong>Veepee</strong> et une commande <strong>Marketplace</strong>, suivies séparément.
+      </p>
+    </section>
+
+    <section class="confirmation-alert" aria-label="Order split information">
+      <div class="confirmation-alert__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 6.5v4"/>
+          <path d="M10 13.5h.01"/>
+          <circle cx="10" cy="10" r="7"/>
+        </svg>
+      </div>
+      <p class="description__text confirmation-alert__text">
+        Les délais, le suivi et le service après-vente peuvent différer selon le vendeur.
+      </p>
+    </section>
+
+    <section class="confirmation-section" aria-labelledby="orders-title">
+      <h2 class="section-title" id="orders-title">Vos commandes</h2>
+
+      <article class="order-card">
+        <div class="order-card__header">
+          <div>
+            <span class="tag tag--filled-brand">Commande Veepee</span>
+            <h3 class="order-card__title">#VP-45872193</h3>
+          </div>
+          <span class="order-card__meta">Livraison estimée 2 mai</span>
+        </div>
+
+        <div class="order-item">
+          <div class="order-item__thumb order-item__thumb--rose" aria-hidden="true"></div>
+          <div class="order-item__content">
+            <p class="order-item__name">Leather Cross-Body Bag — Rose Poudré</p>
+            <p class="order-item__meta">Qté 1 · Taille M</p>
+          </div>
+          <span class="price__discount price__discount--sm">89<span class="price__decimal">,99</span><span class="price__currency">€</span></span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="order-summary">
+          <div class="order-summary__row">
+            <span class="order-summary__label">Expédié par</span>
+            <span class="order-summary__value">Veepee</span>
+          </div>
+          <div class="order-summary__row">
+            <span class="order-summary__label">Paiement</span>
+            <span class="order-summary__value">Visa •••• 4242</span>
+          </div>
+          <div class="order-summary__row">
+            <span class="order-summary__label">Total</span>
+            <span class="order-summary__value order-summary__value--strong">89,99€</span>
+          </div>
+        </div>
+
+        <button class="btn-primary" type="button">Suivre la commande Veepee</button>
+      </article>
+
+      <article class="order-card">
+        <div class="order-card__header">
+          <div>
+            <span class="tag tag--soft-grey">Commande Marketplace</span>
+            <h3 class="order-card__title">#MP-99318452</h3>
+          </div>
+          <span class="order-card__meta">Livraison estimée 5 mai</span>
+        </div>
+
+        <div class="order-item">
+          <div class="order-item__thumb order-item__thumb--blue" aria-hidden="true"></div>
+          <div class="order-item__content">
+            <p class="order-item__name">Bloom Home — Set de verres fumés</p>
+            <p class="order-item__meta">Qté 2 · Seller: Casa Nova</p>
+          </div>
+          <span class="price__discount price__discount--sm">39<span class="price__decimal">,90</span><span class="price__currency">€</span></span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="order-summary">
+          <div class="order-summary__row">
+            <span class="order-summary__label">Vendu et expédié par</span>
+            <span class="order-summary__value">Casa Nova</span>
+          </div>
+          <div class="order-summary__row">
+            <span class="order-summary__label">Service client</span>
+            <span class="order-summary__value">Sous 48h ouvrées</span>
+          </div>
+          <div class="order-summary__row">
+            <span class="order-summary__label">Total</span>
+            <span class="order-summary__value order-summary__value--strong">39,90€</span>
+          </div>
+        </div>
+
+        <div class="marketplace-note">
+          <span class="tag tag--sm tag--soft-brand">Marketplace</span>
+          <p class="description__text">
+            Le suivi, les retours et la facturation de cette commande sont gérés par le vendeur partenaire.
+          </p>
+        </div>
+
+        <div class="confirmation-actions confirmation-actions--inline">
+          <button class="btn-secondary" type="button">Contacter le vendeur</button>
+          <button class="btn-primary" type="button">Suivre la commande Marketplace</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="confirmation-section" aria-labelledby="next-title">
+      <h2 class="section-title" id="next-title">Et maintenant ?</h2>
+      <div class="next-steps">
+        <div class="next-step">
+          <span class="next-step__number">1</span>
+          <div>
+            <p class="next-step__title">Email de confirmation envoyé</p>
+            <p class="description__text">Vous recevrez un récapitulatif détaillé pour chaque commande.</p>
+          </div>
+        </div>
+        <div class="next-step">
+          <span class="next-step__number">2</span>
+          <div>
+            <p class="next-step__title">Suivi séparé</p>
+            <p class="description__text">Chaque commande aura son propre numéro de suivi et ses propres délais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="confirmation-actions">
+      <button class="btn-primary" type="button">Retour à l'accueil</button>
+      <button class="btn-secondary" type="button">Voir mes commandes</button>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,761 @@
+{
+  "frame": {
+    "id": "product-page",
+    "name": "Product Page / Mobile",
+    "width": 375,
+    "height": 812,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "layoutSizingHorizontal": "FIXED",
+    "layoutSizingVertical": "HUG",
+    "clipsContent": true,
+    "fills": [{ "type": "SOLID", "color": "#FFFFFF", "opacity": 1 }]
+  },
+  "nodes": [
+    {
+      "id": "header",
+      "type": "FRAME",
+      "name": "Header",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "SPACE_BETWEEN",
+      "counterAxisAlignItems": "CENTER",
+      "width": 375,
+      "height": 48,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "layoutSizingHorizontal": "FILL",
+      "fills": [{ "type": "SOLID", "color": "color/bg/neutral/primary", "opacity": 1 }],
+      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "children": [
+        {
+          "id": "header-back",
+          "type": "TEXT",
+          "name": "Back Icon",
+          "text": "←",
+          "fontSize": 20,
+          "fontFamily": "Inter",
+          "fontWeight": 400,
+          "color": "color/content/neutral/primary"
+        },
+        {
+          "id": "header-title",
+          "type": "TEXT",
+          "name": "Header Title",
+          "text": "Product",
+          "textStyle": "heading/small",
+          "color": "color/content/neutral/primary"
+        },
+        {
+          "id": "header-share",
+          "type": "TEXT",
+          "name": "Share Icon",
+          "text": "⤴",
+          "fontSize": 20,
+          "fontFamily": "Inter",
+          "fontWeight": 400,
+          "color": "color/content/neutral/primary"
+        }
+      ]
+    },
+
+    {
+      "id": "image-area",
+      "type": "FRAME",
+      "name": "Product Image",
+      "width": 375,
+      "height": 375,
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MAX",
+      "counterAxisAlignItems": "CENTER",
+      "paddingBottom": 12,
+      "layoutSizingHorizontal": "FILL",
+      "fills": [{ "type": "SOLID", "color": "#f0e6f0", "opacity": 1 }],
+      "children": [
+        {
+          "id": "badge-discount",
+          "type": "TEXT",
+          "name": "Badge Discount",
+          "text": "-40%",
+          "fontFamily": "HK Grotesk",
+          "fontWeight": 700,
+          "fontSize": 12,
+          "color": "#ffffff",
+          "token": "VpBadge/Brand/M"
+        },
+        {
+          "id": "page-control",
+          "type": "FRAME",
+          "name": "VpPageControl",
+          "layoutMode": "HORIZONTAL",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "padding": 4,
+          "cornerRadius": 1000,
+          "fills": [{ "type": "SOLID", "color": "#000000", "opacity": 0.1 }],
+          "token": "VpPageControl/overlay=On",
+          "children": [
+            {
+              "id": "dot-1",
+              "type": "FRAME",
+              "name": "VpPageControlItem Active",
+              "width": 8,
+              "height": 8,
+              "cornerRadius": 1000,
+              "fills": [{ "type": "SOLID", "color": "#69696f", "opacity": 1 }],
+              "token": "VpPageControlItem/active=On"
+            },
+            {
+              "id": "dot-2",
+              "type": "FRAME",
+              "name": "VpPageControlItem",
+              "width": 8,
+              "height": 8,
+              "cornerRadius": 1000,
+              "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+              "token": "VpPageControlItem/active=Off"
+            },
+            {
+              "id": "dot-3",
+              "type": "FRAME",
+              "name": "VpPageControlItem",
+              "width": 8,
+              "height": 8,
+              "cornerRadius": 1000,
+              "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+              "token": "VpPageControlItem/active=Off"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "product-info",
+      "type": "FRAME",
+      "name": "Product Info",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "itemSpacing": 16,
+      "padding": 16,
+      "layoutSizingHorizontal": "FILL",
+      "fills": [],
+      "children": [
+        {
+          "id": "brand-tag",
+          "type": "FRAME",
+          "name": "VpTag / Soft / Grey / md",
+          "layoutMode": "HORIZONTAL",
+          "counterAxisAlignItems": "CENTER",
+          "padding": 4,
+          "cornerRadius": 4,
+          "fills": [{ "type": "SOLID", "color": "#f5f5f5", "opacity": 1 }],
+          "token": "VpTag/Soft/Grey/md",
+          "children": [
+            {
+              "id": "brand-tag-label",
+              "type": "TEXT",
+              "name": "Tag Label",
+              "text": "MAISON BLOOM",
+              "fontFamily": "HK Grotesk",
+              "fontWeight": 700,
+              "fontSize": 14,
+              "lineHeight": 21,
+              "color": "#31313a"
+            }
+          ]
+        },
+
+        {
+          "id": "product-name",
+          "type": "TEXT",
+          "name": "Product Name",
+          "text": "Leather Cross-Body Bag — Signature Collection",
+          "textStyle": "section/title",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+
+        {
+          "id": "rating-row",
+          "type": "FRAME",
+          "name": "VpRating",
+          "layoutMode": "HORIZONTAL",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "fills": [],
+          "token": "VpRating",
+          "children": [
+            {
+              "id": "stars",
+              "type": "TEXT",
+              "name": "Stars",
+              "text": "★★★★☆",
+              "fontFamily": "Inter",
+              "fontWeight": 400,
+              "fontSize": 16,
+              "color": "#f5a623"
+            },
+            {
+              "id": "rating-count",
+              "type": "TEXT",
+              "name": "Rating Count",
+              "text": "(128 avis)",
+              "textStyle": "body/tiny-regular",
+              "color": "color/content/neutral/secondary"
+            }
+          ]
+        },
+
+        {
+          "id": "price-block",
+          "type": "FRAME",
+          "name": "VpPrice / Default / md / Vertical",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "itemSpacing": 4,
+          "fills": [],
+          "token": "VpPrice/Default/md",
+          "children": [
+            {
+              "id": "price-row",
+              "type": "FRAME",
+              "name": "Price Row",
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 8,
+              "fills": [],
+              "children": [
+                {
+                  "id": "discount-price",
+                  "type": "TEXT",
+                  "name": "VpPriceBase / Discount / Primary Brand / md",
+                  "text": "89,99€",
+                  "fontFamily": "HK Grotesk",
+                  "fontWeight": 700,
+                  "fontSize": 24,
+                  "lineHeight": 36,
+                  "color": "#ec008c",
+                  "token": "VpPriceBase/DiscountPrice/PrimaryBrand/md"
+                },
+                {
+                  "id": "base-price",
+                  "type": "TEXT",
+                  "name": "VpPriceBase / Base / Primary Brand / sm",
+                  "text": "149,99€",
+                  "fontFamily": "HK Grotesk",
+                  "fontWeight": 500,
+                  "fontSize": 14,
+                  "lineHeight": 21,
+                  "color": "#31313a",
+                  "token": "VpPriceBase/BasePrice/PrimaryBrand/sm"
+                }
+              ]
+            },
+            {
+              "id": "savings-tag",
+              "type": "FRAME",
+              "name": "VpTag / Soft / Success / sm",
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "padding": 4,
+              "cornerRadius": 4,
+              "fills": [{ "type": "SOLID", "color": "#e9f9ef", "opacity": 1 }],
+              "token": "VpTag/Soft/Success/sm",
+              "children": [
+                {
+                  "id": "savings-label",
+                  "type": "TEXT",
+                  "name": "Tag Label",
+                  "text": "Économisez 60€",
+                  "fontFamily": "HK Grotesk",
+                  "fontWeight": 700,
+                  "fontSize": 12,
+                  "lineHeight": 18,
+                  "color": "#0c7c32"
+                }
+              ]
+            },
+            {
+              "id": "eco-part",
+              "type": "TEXT",
+              "name": "Eco Participation",
+              "text": "dont 0,10€ d'éco-participation",
+              "textStyle": "body/tiny-regular",
+              "color": "color/content/neutral/secondary"
+            }
+          ]
+        },
+
+        {
+          "id": "divider-1",
+          "type": "FRAME",
+          "name": "Divider",
+          "width": 343,
+          "height": 1,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }]
+        },
+
+        {
+          "id": "color-section",
+          "type": "FRAME",
+          "name": "Color Variation",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 12,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [],
+          "children": [
+            {
+              "id": "color-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Couleur",
+              "fontFamily": "VP Sans Next",
+              "fontWeight": 500,
+              "fontSize": 16,
+              "lineHeight": 24,
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "id": "color-pills",
+              "type": "FRAME",
+              "name": "VpPill Group",
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 8,
+              "fills": [],
+              "children": [
+                {
+                  "id": "pill-rose",
+                  "type": "FRAME",
+                  "name": "VpPill / Active",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 4,
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#fff2f9", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "#ec008c", "opacity": 1 }],
+                  "strokeWeight": 2,
+                  "token": "VpPill/active=True/style=Brand",
+                  "children": [
+                    {
+                      "id": "swatch-rose",
+                      "type": "FRAME",
+                      "name": "Color Swatch",
+                      "width": 16,
+                      "height": 16,
+                      "cornerRadius": "border-radius/full",
+                      "fills": [{ "type": "SOLID", "color": "#d4a5d4", "opacity": 1 }],
+                      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                      "strokeWeight": 1
+                    },
+                    {
+                      "id": "pill-rose-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "Rose Poudré",
+                      "textStyle": "body/bold-small",
+                      "color": "color/bg/brand/default"
+                    }
+                  ]
+                },
+                {
+                  "id": "pill-bleu",
+                  "type": "FRAME",
+                  "name": "VpPill / Default",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 4,
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                  "strokeWeight": 1,
+                  "token": "VpPill/active=False/style=Brand",
+                  "children": [
+                    {
+                      "id": "swatch-bleu",
+                      "type": "FRAME",
+                      "name": "Color Swatch",
+                      "width": 16,
+                      "height": 16,
+                      "cornerRadius": "border-radius/full",
+                      "fills": [{ "type": "SOLID", "color": "#a5a5d4", "opacity": 1 }],
+                      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                      "strokeWeight": 1
+                    },
+                    {
+                      "id": "pill-bleu-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "Bleu Nuit",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "pill-vert",
+                  "type": "FRAME",
+                  "name": "VpPill / Default",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 4,
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                  "strokeWeight": 1,
+                  "token": "VpPill/active=False/style=Brand",
+                  "children": [
+                    {
+                      "id": "swatch-vert",
+                      "type": "FRAME",
+                      "name": "Color Swatch",
+                      "width": 16,
+                      "height": 16,
+                      "cornerRadius": "border-radius/full",
+                      "fills": [{ "type": "SOLID", "color": "#a5d4a5", "opacity": 1 }],
+                      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                      "strokeWeight": 1
+                    },
+                    {
+                      "id": "pill-vert-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "Vert Sauge",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "divider-2",
+          "type": "FRAME",
+          "name": "Divider",
+          "width": 343,
+          "height": 1,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }]
+        },
+
+        {
+          "id": "size-section",
+          "type": "FRAME",
+          "name": "Size Variation",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 12,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [],
+          "children": [
+            {
+              "id": "size-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Taille",
+              "fontFamily": "VP Sans Next",
+              "fontWeight": 500,
+              "fontSize": 16,
+              "lineHeight": 24,
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "id": "size-pills",
+              "type": "FRAME",
+              "name": "VpPill Group",
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 8,
+              "fills": [],
+              "children": [
+                {
+                  "id": "pill-s",
+                  "type": "FRAME",
+                  "name": "VpPill / Default",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                  "strokeWeight": 1,
+                  "children": [
+                    {
+                      "id": "pill-s-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "S",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                },
+                {
+                  "id": "pill-m",
+                  "type": "FRAME",
+                  "name": "VpPill / Active",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#fff2f9", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "#ec008c", "opacity": 1 }],
+                  "strokeWeight": 2,
+                  "children": [
+                    {
+                      "id": "pill-m-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "M",
+                      "textStyle": "body/bold-small",
+                      "color": "color/bg/brand/default"
+                    }
+                  ]
+                },
+                {
+                  "id": "pill-l",
+                  "type": "FRAME",
+                  "name": "VpPill / Disabled",
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "height": 36,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": "border-radius/full",
+                  "fills": [{ "type": "SOLID", "color": "#f6f6f6", "opacity": 1 }],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+                  "strokeWeight": 1,
+                  "children": [
+                    {
+                      "id": "pill-l-label",
+                      "type": "TEXT",
+                      "name": "Pill Label",
+                      "text": "L",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/disabled"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "divider-3",
+          "type": "FRAME",
+          "name": "Divider",
+          "width": 343,
+          "height": 1,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }]
+        },
+
+        {
+          "id": "description-section",
+          "type": "FRAME",
+          "name": "Description",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 8,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [],
+          "children": [
+            {
+              "id": "desc-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Description",
+              "fontFamily": "VP Sans Next",
+              "fontWeight": 500,
+              "fontSize": 16,
+              "lineHeight": 24,
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "id": "desc-text",
+              "type": "TEXT",
+              "name": "Description Body",
+              "text": "Sac bandoulière en cuir véritable de la collection Signature. Finitions soignées, doublure en coton, bandoulière ajustable et poche intérieure zippée.",
+              "textStyle": "body/small-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "desc-specs",
+              "type": "TEXT",
+              "name": "Specs",
+              "text": "• Cuir pleine fleur italien\n• Dimensions : 24 × 18 × 8 cm\n• Bandoulière ajustable (80–130 cm)\n• Fermeture magnétique",
+              "textStyle": "body/small-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "desc-more",
+              "type": "TEXT",
+              "name": "VpTextLink / md",
+              "text": "Voir plus",
+              "textStyle": "body/small",
+              "color": "color/content/textlink/default",
+              "token": "VpTextLink/md"
+            }
+          ]
+        },
+
+        {
+          "id": "divider-4",
+          "type": "FRAME",
+          "name": "Divider",
+          "width": 343,
+          "height": 1,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }]
+        },
+
+        {
+          "id": "delivery-section",
+          "type": "FRAME",
+          "name": "Delivery Info",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 8,
+          "layoutSizingHorizontal": "FILL",
+          "fills": [],
+          "children": [
+            {
+              "id": "delivery-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Livraison",
+              "fontFamily": "VP Sans Next",
+              "fontWeight": 500,
+              "fontSize": 16,
+              "lineHeight": 24,
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "id": "delivery-text",
+              "type": "TEXT",
+              "name": "Delivery Estimate",
+              "text": "Livraison estimée entre le 28 avril et le 2 mai",
+              "textStyle": "body/small-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "bottom-bar",
+      "type": "FRAME",
+      "name": "Bottom Bar / Sticky CTA",
+      "layoutMode": "HORIZONTAL",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 16,
+      "width": 375,
+      "height": 72,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "layoutSizingHorizontal": "FILL",
+      "fills": [{ "type": "SOLID", "color": "color/bg/neutral/primary", "opacity": 1 }],
+      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "children": [
+        {
+          "id": "qty-trigger",
+          "type": "FRAME",
+          "name": "Qty Selector",
+          "layoutMode": "HORIZONTAL",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 8,
+          "height": 48,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": "border-radius/sm",
+          "fills": [{ "type": "SOLID", "color": "#ffffff", "opacity": 1 }],
+          "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary", "opacity": 1 }],
+          "strokeWeight": 1,
+          "children": [
+            {
+              "id": "qty-label",
+              "type": "TEXT",
+              "name": "Qty Label",
+              "text": "Qté",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/secondary"
+            },
+            {
+              "id": "qty-value",
+              "type": "TEXT",
+              "name": "Qty Value",
+              "text": "1",
+              "fontFamily": "HK Grotesk",
+              "fontWeight": 700,
+              "fontSize": 16,
+              "lineHeight": 24,
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "id": "qty-chevron",
+              "type": "TEXT",
+              "name": "Chevron",
+              "text": "▾",
+              "fontSize": 12,
+              "fontFamily": "Inter",
+              "fontWeight": 400,
+              "color": "color/content/neutral/secondary"
+            }
+          ]
+        },
+        {
+          "id": "cta-button",
+          "type": "FRAME",
+          "name": "VpButton / Primary / lg",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "height": 48,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": "border-radius/sm",
+          "layoutSizingHorizontal": "FILL",
+          "fills": [{ "type": "SOLID", "color": "color/bg/brand/default", "opacity": 1 }],
+          "token": "VpButton/Primary/lg",
+          "children": [
+            {
+              "id": "cta-label",
+              "type": "TEXT",
+              "name": "Button Label",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "#ffffff"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
