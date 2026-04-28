@@ -1,0 +1,143 @@
+{
+  "frame": {
+    "id": "organism-sticky-cta-frame",
+    "name": "Organisms / Sticky CTA",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0,
+    "fills": ["color/bg/neutral/secondary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "sticky-cta",
+      "name": "Sticky CTA Bar",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "width": 375,
+      "layoutSizingHorizontal": "FIXED",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 8,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": ["color/border/neutral/primary"],
+      "strokeWeight": 1,
+      "strokeAlign": "OUTSIDE",
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "sticky-cta-top-row",
+          "name": "Top Row",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "sticky-cta-price-block",
+              "name": "Price Block",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "itemSpacing": 2,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "sticky-cta-original-price",
+                  "name": "Original Price",
+                  "text": "299,99 €",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/disabled"
+                },
+                {
+                  "type": "TEXT",
+                  "id": "sticky-cta-current-price",
+                  "name": "Current Price",
+                  "text": "149,99 €",
+                  "textStyle": "price/main/md",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "sticky-cta-discount-badge",
+              "name": "Discount Badge",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 4,
+              "paddingBottom": 4,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/brand/light/default"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "sticky-cta-discount-text",
+                  "name": "Discount",
+                  "text": "-50%",
+                  "textStyle": "body/bold-small",
+                  "color": "color/content/brand/default"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "sticky-cta-button",
+          "name": "CTA Button",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 14,
+          "paddingBottom": 14,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "sticky-cta-button-text",
+              "name": "Label",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

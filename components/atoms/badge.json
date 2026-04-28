@@ -1,0 +1,263 @@
+{
+  "frame": {
+    "id": "atoms-badge-frame",
+    "name": "Atoms / Badges",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 24,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "badge-brand-row",
+      "name": "Brand Badge",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "badge-brand-label",
+          "name": "Label",
+          "text": "Brand Badge",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "badge-brand",
+          "name": "Badge / Brand",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 2,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/brand/light/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "badge-brand-text",
+              "name": "Label",
+              "text": "Nouveau",
+              "textStyle": "body/tiny",
+              "color": "color/content/brand/default"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "badge-success-row",
+      "name": "Success Badge",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "badge-success-label",
+          "name": "Label",
+          "text": "Success Badge",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "badge-success",
+          "name": "Badge / Success",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 2,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#e6f7ec" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "badge-success-text",
+              "name": "Label",
+              "text": "En stock",
+              "textStyle": "body/tiny",
+              "color": { "hex": "#0f9f40" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "badge-error-row",
+      "name": "Error Badge",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "badge-error-label",
+          "name": "Label",
+          "text": "Error Badge",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "badge-error",
+          "name": "Badge / Error",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 2,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#ffecec" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "badge-error-text",
+              "name": "Label",
+              "text": "Rupture de stock",
+              "textStyle": "body/tiny",
+              "color": { "hex": "#dd1f29" }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "badge-neutral-row",
+      "name": "Neutral Badge",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "badge-neutral-label",
+          "name": "Label",
+          "text": "Neutral Badge",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "badge-neutral",
+          "name": "Badge / Neutral",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 2,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "badge-neutral-text",
+              "name": "Label",
+              "text": "Tendance",
+              "textStyle": "body/tiny",
+              "color": "color/content/neutral/secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "badge-discount-row",
+      "name": "Discount Badge",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "badge-discount-label",
+          "name": "Label",
+          "text": "Discount Badge",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "badge-discount",
+          "name": "Badge / Discount",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 2,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/brand/light/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "badge-discount-text",
+              "name": "Label",
+              "text": "-50%",
+              "textStyle": "body/bold-tiny",
+              "color": "color/content/brand/default"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

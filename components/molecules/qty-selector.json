@@ -1,0 +1,160 @@
+{
+  "frame": {
+    "id": "molecule-qty-selector-frame",
+    "name": "Molecules / Quantity Selector",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 16,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "TEXT",
+      "id": "qty-label",
+      "name": "Label",
+      "text": "Quantité",
+      "textStyle": "section/small-subtitle",
+      "color": "color/content/neutral/primary",
+      "layoutSizingHorizontal": "FILL"
+    },
+    {
+      "type": "FRAME",
+      "id": "qty-selector",
+      "name": "Qty Selector",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "HUG",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "strokes": ["color/border/neutral/primary"],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "cornerRadius": 4,
+      "itemSpacing": 0,
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "qty-btn-minus",
+          "name": "Minus Button",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 40,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "cornerRadius": 0,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "qty-btn-minus-text",
+              "name": "Icon",
+              "text": "−",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "qty-divider-left",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "width": 1,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "qty-count",
+          "name": "Count",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 40,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": ["color/bg/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "cornerRadius": 0,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "qty-count-text",
+              "name": "Value",
+              "text": "1",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "qty-divider-right",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "width": 1,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "qty-btn-plus",
+          "name": "Plus Button",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 40,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "cornerRadius": 0,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "qty-btn-plus-text",
+              "name": "Icon",
+              "text": "+",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TEXT",
+      "id": "qty-stock-info",
+      "name": "Stock Info",
+      "text": "Plus que 5 articles disponibles",
+      "textStyle": "body/tiny",
+      "color": "color/content/neutral/secondary",
+      "layoutSizingHorizontal": "FILL"
+    }
+  ]
+}

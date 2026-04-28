@@ -1,0 +1,151 @@
+{
+  "frame": {
+    "id": "molecule-color-selector-frame",
+    "name": "Molecules / Color Selector",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 16,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "color-selector-header",
+      "name": "Header",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "SPACE_BETWEEN",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "color-selector-label",
+          "name": "Label",
+          "text": "Couleur",
+          "textStyle": "section/small-subtitle",
+          "color": "color/content/neutral/primary"
+        },
+        {
+          "type": "TEXT",
+          "id": "color-selector-value",
+          "name": "Selected Value",
+          "text": "Rose",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary"
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "color-selector-swatches",
+      "name": "Swatches",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "strokes": [],
+      "strokeWeight": 0,
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "swatch-selected",
+          "name": "Swatch / Selected",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 32,
+          "height": 32,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 1000,
+          "fills": ["color/bg/brand/default"],
+          "strokes": ["color/border/brand/default"],
+          "strokeWeight": 2,
+          "strokeAlign": "OUTSIDE",
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "swatch-purple",
+          "name": "Swatch / Purple",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 32,
+          "height": 32,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#a5a5d4" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "swatch-green",
+          "name": "Swatch / Green",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 32,
+          "height": 32,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#a5d4a5" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "swatch-black",
+          "name": "Swatch / Black",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 32,
+          "height": 32,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#31313a" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "swatch-beige",
+          "name": "Swatch / Beige",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 32,
+          "height": 32,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 1000,
+          "fills": [{ "hex": "#d4c4a5" }],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,693 @@
+{
+  "frame": {
+    "id": "atoms-typography-frame",
+    "name": "Atoms / Typography",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 20,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "typo-section-headings",
+      "name": "Headings",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "typo-section-headings-title",
+          "name": "Section Label",
+          "text": "HEADINGS",
+          "textStyle": "body/bold-tiny",
+          "color": "color/content/neutral/disabled",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-heading-small-row",
+          "name": "heading/small",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-heading-small-style",
+              "name": "Style",
+              "text": "heading/small",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-heading-small-text",
+              "name": "Text",
+              "text": "Vente Privée",
+              "textStyle": "heading/small",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-heading-subheading-row",
+          "name": "heading/subheading",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-heading-subheading-style",
+              "name": "Style",
+              "text": "heading/subheading",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-heading-subheading-text",
+              "name": "Text",
+              "text": "Collection Printemps",
+              "textStyle": "heading/subheading",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "typo-section-sections",
+      "name": "Section Styles",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "typo-section-sections-title",
+          "name": "Section Label",
+          "text": "SECTION",
+          "textStyle": "body/bold-tiny",
+          "color": "color/content/neutral/disabled",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-section-title-row",
+          "name": "section/title",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-section-title-style",
+              "name": "Style",
+              "text": "section/title",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-section-title-text",
+              "name": "Text",
+              "text": "Détails du produit",
+              "textStyle": "section/title",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-section-subtitle-row",
+          "name": "section/subtitle",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-section-subtitle-style",
+              "name": "Style",
+              "text": "section/subtitle",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-section-subtitle-text",
+              "name": "Text",
+              "text": "Caractéristiques",
+              "textStyle": "section/subtitle",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-section-small-subtitle-row",
+          "name": "section/small-subtitle",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-section-small-subtitle-style",
+              "name": "Style",
+              "text": "section/small-subtitle",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-section-small-subtitle-text",
+              "name": "Text",
+              "text": "Taille & Couleur",
+              "textStyle": "section/small-subtitle",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "typo-section-body",
+      "name": "Body Styles",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "typo-section-body-title",
+          "name": "Section Label",
+          "text": "BODY",
+          "textStyle": "body/bold-tiny",
+          "color": "color/content/neutral/disabled",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-text-row",
+          "name": "body/text",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-text-style",
+              "name": "Style",
+              "text": "body/text",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-text-text",
+              "name": "Text",
+              "text": "Description du produit avec tous les détails.",
+              "textStyle": "body/text",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-text-regular-row",
+          "name": "body/text-regular",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-text-regular-style",
+              "name": "Style",
+              "text": "body/text-regular",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-text-regular-text",
+              "name": "Text",
+              "text": "Texte corps regular — lisible et confortable.",
+              "textStyle": "body/text-regular",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-bold-text-row",
+          "name": "body/bold-text",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-text-style",
+              "name": "Style",
+              "text": "body/bold-text",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-text-text",
+              "name": "Text",
+              "text": "Texte corps gras — mise en avant.",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-small-row",
+          "name": "body/small",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-small-style",
+              "name": "Style",
+              "text": "body/small",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-small-text",
+              "name": "Text",
+              "text": "Texte petit — informations secondaires.",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-small-regular-row",
+          "name": "body/small-regular",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-small-regular-style",
+              "name": "Style",
+              "text": "body/small-regular",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-small-regular-text",
+              "name": "Text",
+              "text": "Petit texte regular — léger et discret.",
+              "textStyle": "body/small-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-bold-small-row",
+          "name": "body/bold-small",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-small-style",
+              "name": "Style",
+              "text": "body/bold-small",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-small-text",
+              "name": "Text",
+              "text": "Petit texte gras — accent fort.",
+              "textStyle": "body/bold-small",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-tiny-row",
+          "name": "body/tiny",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-tiny-style",
+              "name": "Style",
+              "text": "body/tiny",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-tiny-text",
+              "name": "Text",
+              "text": "Très petit texte — mentions légales.",
+              "textStyle": "body/tiny",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-tiny-regular-row",
+          "name": "body/tiny-regular",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-tiny-regular-style",
+              "name": "Style",
+              "text": "body/tiny-regular",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-tiny-regular-text",
+              "name": "Text",
+              "text": "Tiny regular — annotations discrètes.",
+              "textStyle": "body/tiny-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-bold-tiny-row",
+          "name": "body/bold-tiny",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-tiny-style",
+              "name": "Style",
+              "text": "body/bold-tiny",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-bold-tiny-text",
+              "name": "Text",
+              "text": "Tiny gras — badges & étiquettes.",
+              "textStyle": "body/bold-tiny",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-body-micro-row",
+          "name": "body/micro",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-body-micro-style",
+              "name": "Style",
+              "text": "body/micro",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-body-micro-text",
+              "name": "Text",
+              "text": "Micro — le plus petit niveau de texte.",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "typo-section-button",
+      "name": "Button Styles",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "typo-section-button-title",
+          "name": "Section Label",
+          "text": "BUTTON",
+          "textStyle": "body/bold-tiny",
+          "color": "color/content/neutral/disabled",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-button-lg-row",
+          "name": "button/lg",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-button-lg-style",
+              "name": "Style",
+              "text": "button/lg",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-button-lg-text",
+              "name": "Text",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-button-md-row",
+          "name": "button/md",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-button-md-style",
+              "name": "Style",
+              "text": "button/md",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-button-md-text",
+              "name": "Text",
+              "text": "Voir les détails",
+              "textStyle": "button/md",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-button-sm-row",
+          "name": "button/sm",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-button-sm-style",
+              "name": "Style",
+              "text": "button/sm",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-button-sm-text",
+              "name": "Text",
+              "text": "En savoir plus",
+              "textStyle": "button/sm",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "typo-section-price",
+      "name": "Price Styles",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "typo-section-price-title",
+          "name": "Section Label",
+          "text": "PRICE",
+          "textStyle": "body/bold-tiny",
+          "color": "color/content/neutral/disabled",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "typo-price-main-md-row",
+          "name": "price/main/md",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "itemSpacing": 2,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "typo-price-main-md-style",
+              "name": "Style",
+              "text": "price/main/md",
+              "textStyle": "body/micro",
+              "color": "color/content/neutral/disabled",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "typo-price-main-md-text",
+              "name": "Text",
+              "text": "149,99 €",
+              "textStyle": "price/main/md",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

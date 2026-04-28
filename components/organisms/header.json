@@ -1,0 +1,99 @@
+{
+  "frame": {
+    "id": "organism-header-frame",
+    "name": "Organisms / Header",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0,
+    "fills": ["color/bg/neutral/secondary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "header",
+      "name": "Header",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "SPACE_BETWEEN",
+      "counterAxisAlignItems": "CENTER",
+      "width": 375,
+      "height": 56,
+      "layoutSizingHorizontal": "FIXED",
+      "layoutSizingVertical": "FIXED",
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": ["color/border/neutral/primary"],
+      "strokeWeight": 1,
+      "strokeAlign": "OUTSIDE",
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "header-left",
+          "name": "Left Action",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 40,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "header-back-icon",
+              "name": "Back Icon",
+              "text": "←",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "id": "header-title",
+          "name": "Title",
+          "text": "Produit",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary"
+        },
+        {
+          "type": "FRAME",
+          "id": "header-right",
+          "name": "Right Action",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "width": 40,
+          "height": 40,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "header-heart-icon",
+              "name": "Wishlist Icon",
+              "text": "♥",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

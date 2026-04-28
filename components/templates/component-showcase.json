@@ -1,0 +1,1535 @@
+{
+  "frame": {
+    "id": "template-showcase-frame",
+    "name": "Component Showcase — Bloom 4",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0,
+    "fills": ["color/bg/neutral/secondary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "section-typography",
+      "name": "Section / Typographie",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-typography-title",
+          "name": "Section Header",
+          "text": "🔤 Typographie",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-typography-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-heading-small",
+          "name": "heading/small",
+          "text": "heading/small — Vente Privée",
+          "textStyle": "heading/small",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-heading-subheading",
+          "name": "heading/subheading",
+          "text": "heading/subheading — Collection Printemps",
+          "textStyle": "heading/subheading",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-section-title",
+          "name": "section/title",
+          "text": "section/title — Détails du produit",
+          "textStyle": "section/title",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-section-subtitle",
+          "name": "section/subtitle",
+          "text": "section/subtitle — Caractéristiques",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-body-text",
+          "name": "body/text",
+          "text": "body/text — Description complète du produit avec ses caractéristiques.",
+          "textStyle": "body/text",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-body-small",
+          "name": "body/small",
+          "text": "body/small — Informations complémentaires",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-body-tiny",
+          "name": "body/tiny",
+          "text": "body/tiny — Mentions légales et annotations",
+          "textStyle": "body/tiny",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "TEXT",
+          "id": "typo-showcase-price",
+          "name": "price/main/md",
+          "text": "price/main/md — 149,99 €",
+          "textStyle": "price/main/md",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "section-spacer-1",
+      "name": "Spacer",
+      "layoutMode": "NONE",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 8,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": []
+    },
+    {
+      "type": "FRAME",
+      "id": "section-buttons",
+      "name": "Section / Boutons",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-buttons-title",
+          "name": "Section Header",
+          "text": "🎨 Boutons",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-buttons-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-btn-primary",
+          "name": "Button / Primary",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "showcase-btn-primary-text",
+              "name": "Label",
+              "text": "Primary — Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-btn-secondary",
+          "name": "Button / Secondary",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": [],
+          "strokes": ["color/border/brand/default"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "showcase-btn-secondary-text",
+              "name": "Label",
+              "text": "Secondary — En savoir plus",
+              "textStyle": "button/lg",
+              "color": "color/content/brand/default"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-btn-ghost",
+          "name": "Button / Ghost",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "showcase-btn-ghost-text",
+              "name": "Label",
+              "text": "Ghost — Voir les détails",
+              "textStyle": "button/lg",
+              "color": "color/content/brand/default"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-btn-disabled",
+          "name": "Button / Disabled",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/disabled"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "showcase-btn-disabled-text",
+              "name": "Label",
+              "text": "Disabled — Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "section-spacer-2",
+      "name": "Spacer",
+      "layoutMode": "NONE",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 8,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": []
+    },
+    {
+      "type": "FRAME",
+      "id": "section-pills-badges",
+      "name": "Section / Pills & Badges",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-pills-badges-title",
+          "name": "Section Header",
+          "text": "💊 Pills & Badges",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-pills-badges-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "TEXT",
+          "id": "pills-subtitle",
+          "name": "Sub Label",
+          "text": "Pills",
+          "textStyle": "body/bold-small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-pills-row",
+          "name": "Pills Row",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "itemSpacing": 8,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-pill-active",
+              "name": "Pill / Active",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 6,
+              "paddingBottom": 6,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/brand/default"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-pill-active-text",
+                  "name": "Label",
+                  "text": "Active",
+                  "textStyle": "body/small",
+                  "color": "color/bg/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-pill-default",
+              "name": "Pill / Default",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 6,
+              "paddingBottom": 6,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-pill-default-text",
+                  "name": "Label",
+                  "text": "Default",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-pill-outline",
+              "name": "Pill / Outline",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 6,
+              "paddingBottom": 6,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "cornerRadius": 1000,
+              "fills": [],
+              "strokes": ["color/border/neutral/primary"],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-pill-outline-text",
+                  "name": "Label",
+                  "text": "Outline",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-pill-disabled",
+              "name": "Pill / Disabled",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 6,
+              "paddingBottom": 6,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-pill-disabled-text",
+                  "name": "Label",
+                  "text": "Disabled",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/disabled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "id": "badges-subtitle",
+          "name": "Sub Label",
+          "text": "Badges",
+          "textStyle": "body/bold-small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-badges-row",
+          "name": "Badges Row",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "itemSpacing": 8,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-badge-brand",
+              "name": "Badge / Brand",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 2,
+              "paddingBottom": 2,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/brand/light/default"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-badge-brand-text",
+                  "name": "Label",
+                  "text": "Nouveau",
+                  "textStyle": "body/tiny",
+                  "color": "color/content/brand/default"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-badge-success",
+              "name": "Badge / Success",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 2,
+              "paddingBottom": 2,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "cornerRadius": 1000,
+              "fills": [{ "hex": "#e6f7ec" }],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-badge-success-text",
+                  "name": "Label",
+                  "text": "En stock",
+                  "textStyle": "body/tiny",
+                  "color": { "hex": "#0f9f40" }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-badge-error",
+              "name": "Badge / Error",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 2,
+              "paddingBottom": 2,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "cornerRadius": 1000,
+              "fills": [{ "hex": "#ffecec" }],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-badge-error-text",
+                  "name": "Label",
+                  "text": "Épuisé",
+                  "textStyle": "body/tiny",
+                  "color": { "hex": "#dd1f29" }
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-badge-neutral",
+              "name": "Badge / Neutral",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 2,
+              "paddingBottom": 2,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "cornerRadius": 1000,
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-badge-neutral-text",
+                  "name": "Label",
+                  "text": "Tendance",
+                  "textStyle": "body/tiny",
+                  "color": "color/content/neutral/secondary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "section-spacer-3",
+      "name": "Spacer",
+      "layoutMode": "NONE",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 8,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": []
+    },
+    {
+      "type": "FRAME",
+      "id": "section-product-card",
+      "name": "Section / Carte Produit",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-product-card-title",
+          "name": "Section Header",
+          "text": "📦 Carte Produit",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-product-card-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-product-card-row",
+          "name": "Product Cards",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "itemSpacing": 12,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-product-card-1",
+              "name": "Product Card",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "width": 160,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "HUG",
+              "cornerRadius": 8,
+              "fills": ["color/bg/neutral/primary"],
+              "strokes": ["color/border/neutral/primary"],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "itemSpacing": 0,
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "showcase-card-1-image",
+                  "name": "Image",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "width": 160,
+                  "height": 160,
+                  "layoutSizingHorizontal": "FIXED",
+                  "layoutSizingVertical": "FIXED",
+                  "fills": ["color/bg/neutral/secondary"],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "cornerRadius": 0,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-1-image-icon",
+                      "name": "Icon",
+                      "text": "🖼",
+                      "textStyle": "heading/small",
+                      "color": "color/content/neutral/disabled"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "showcase-card-1-content",
+                  "name": "Content",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "paddingTop": 8,
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "itemSpacing": 4,
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-1-brand",
+                      "name": "Brand",
+                      "text": "NIKE",
+                      "textStyle": "body/tiny",
+                      "color": "color/content/neutral/secondary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-1-name",
+                      "name": "Name",
+                      "text": "Air Max 90 Essential",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "type": "FRAME",
+                      "id": "showcase-card-1-prices",
+                      "name": "Prices",
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "CENTER",
+                      "layoutSizingHorizontal": "FILL",
+                      "layoutSizingVertical": "HUG",
+                      "fills": [],
+                      "strokes": [],
+                      "strokeWeight": 0,
+                      "itemSpacing": 4,
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-1-price-current",
+                          "name": "Price",
+                          "text": "89,99 €",
+                          "textStyle": "price/main/md",
+                          "color": "color/content/neutral/primary"
+                        },
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-1-price-original",
+                          "name": "Original",
+                          "text": "149,99 €",
+                          "textStyle": "body/small",
+                          "color": "color/content/neutral/disabled"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "id": "showcase-card-1-badge",
+                      "name": "Badge",
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisAlignItems": "CENTER",
+                      "counterAxisAlignItems": "CENTER",
+                      "paddingTop": 2,
+                      "paddingBottom": 2,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                      "cornerRadius": 1000,
+                      "fills": ["color/bg/brand/light/default"],
+                      "strokes": [],
+                      "strokeWeight": 0,
+                      "layoutSizingHorizontal": "HUG",
+                      "layoutSizingVertical": "HUG",
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-1-badge-text",
+                          "name": "Discount",
+                          "text": "-40%",
+                          "textStyle": "body/bold-tiny",
+                          "color": "color/content/brand/default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-product-card-2",
+              "name": "Product Card",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "width": 160,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "HUG",
+              "cornerRadius": 8,
+              "fills": ["color/bg/neutral/primary"],
+              "strokes": ["color/border/neutral/primary"],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "itemSpacing": 0,
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "showcase-card-2-image",
+                  "name": "Image",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "width": 160,
+                  "height": 160,
+                  "layoutSizingHorizontal": "FIXED",
+                  "layoutSizingVertical": "FIXED",
+                  "fills": ["color/bg/neutral/secondary"],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "cornerRadius": 0,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-2-image-icon",
+                      "name": "Icon",
+                      "text": "🖼",
+                      "textStyle": "heading/small",
+                      "color": "color/content/neutral/disabled"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "showcase-card-2-content",
+                  "name": "Content",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "paddingTop": 8,
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "itemSpacing": 4,
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-2-brand",
+                      "name": "Brand",
+                      "text": "ADIDAS",
+                      "textStyle": "body/tiny",
+                      "color": "color/content/neutral/secondary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-card-2-name",
+                      "name": "Name",
+                      "text": "Stan Smith Vegan",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "type": "FRAME",
+                      "id": "showcase-card-2-prices",
+                      "name": "Prices",
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisAlignItems": "MIN",
+                      "counterAxisAlignItems": "CENTER",
+                      "layoutSizingHorizontal": "FILL",
+                      "layoutSizingVertical": "HUG",
+                      "fills": [],
+                      "strokes": [],
+                      "strokeWeight": 0,
+                      "itemSpacing": 4,
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-2-price-current",
+                          "name": "Price",
+                          "text": "59,99 €",
+                          "textStyle": "price/main/md",
+                          "color": "color/content/neutral/primary"
+                        },
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-2-price-original",
+                          "name": "Original",
+                          "text": "99,99 €",
+                          "textStyle": "body/small",
+                          "color": "color/content/neutral/disabled"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "FRAME",
+                      "id": "showcase-card-2-badge",
+                      "name": "Badge",
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisAlignItems": "CENTER",
+                      "counterAxisAlignItems": "CENTER",
+                      "paddingTop": 2,
+                      "paddingBottom": 2,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                      "cornerRadius": 1000,
+                      "fills": ["color/bg/brand/light/default"],
+                      "strokes": [],
+                      "strokeWeight": 0,
+                      "layoutSizingHorizontal": "HUG",
+                      "layoutSizingVertical": "HUG",
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "id": "showcase-card-2-badge-text",
+                          "name": "Discount",
+                          "text": "-40%",
+                          "textStyle": "body/bold-tiny",
+                          "color": "color/content/brand/default"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "section-spacer-4",
+      "name": "Spacer",
+      "layoutMode": "NONE",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 8,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": []
+    },
+    {
+      "type": "FRAME",
+      "id": "section-selectors",
+      "name": "Section / Sélecteurs",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/primary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-selectors-title",
+          "name": "Section Header",
+          "text": "🔢 Sélecteurs",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-selectors-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "TEXT",
+          "id": "qty-selector-sublabel",
+          "name": "Sub Label",
+          "text": "Quantité",
+          "textStyle": "section/small-subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-qty-selector",
+          "name": "Qty Selector",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "cornerRadius": 4,
+          "itemSpacing": 0,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-qty-minus",
+              "name": "Minus",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 40,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-qty-minus-text",
+                  "name": "Icon",
+                  "text": "−",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-qty-div-l",
+              "name": "Divider",
+              "layoutMode": "NONE",
+              "width": 1,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/border/neutral/primary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": []
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-qty-count",
+              "name": "Count",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 40,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/bg/neutral/primary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-qty-count-text",
+                  "name": "Value",
+                  "text": "1",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-qty-div-r",
+              "name": "Divider",
+              "layoutMode": "NONE",
+              "width": 1,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/border/neutral/primary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": []
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-qty-plus",
+              "name": "Plus",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 40,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-qty-plus-text",
+                  "name": "Icon",
+                  "text": "+",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "id": "color-selector-sublabel",
+          "name": "Sub Label",
+          "text": "Couleur",
+          "textStyle": "section/small-subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-color-swatches",
+          "name": "Color Swatches",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "itemSpacing": 8,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-swatch-selected",
+              "name": "Swatch Selected",
+              "layoutMode": "NONE",
+              "width": 32,
+              "height": 32,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "cornerRadius": 1000,
+              "fills": ["color/bg/brand/default"],
+              "strokes": ["color/border/brand/default"],
+              "strokeWeight": 2,
+              "strokeAlign": "OUTSIDE",
+              "children": []
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-swatch-purple",
+              "name": "Swatch Purple",
+              "layoutMode": "NONE",
+              "width": 32,
+              "height": 32,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "cornerRadius": 1000,
+              "fills": [{ "hex": "#a5a5d4" }],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": []
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-swatch-green",
+              "name": "Swatch Green",
+              "layoutMode": "NONE",
+              "width": 32,
+              "height": 32,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "cornerRadius": 1000,
+              "fills": [{ "hex": "#a5d4a5" }],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": []
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-swatch-black",
+              "name": "Swatch Black",
+              "layoutMode": "NONE",
+              "width": 32,
+              "height": 32,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "cornerRadius": 1000,
+              "fills": [{ "hex": "#31313a" }],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "section-spacer-5",
+      "name": "Spacer",
+      "layoutMode": "NONE",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 8,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": []
+    },
+    {
+      "type": "FRAME",
+      "id": "section-organisms",
+      "name": "Section / Organismes",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 12,
+      "fills": ["color/bg/neutral/secondary"],
+      "strokes": [],
+      "strokeWeight": 0,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "section-organisms-title",
+          "name": "Section Header",
+          "text": "🏠 Organismes",
+          "textStyle": "section/subtitle",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "section-organisms-divider",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "children": []
+        },
+        {
+          "type": "TEXT",
+          "id": "header-sublabel",
+          "name": "Sub Label",
+          "text": "Header",
+          "textStyle": "body/bold-small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-header",
+          "name": "Header",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 56,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "fills": ["color/bg/neutral/primary"],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "OUTSIDE",
+          "itemSpacing": 8,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-header-left",
+              "name": "Left",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 40,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-header-back",
+                  "name": "Back",
+                  "text": "←",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            },
+            {
+              "type": "TEXT",
+              "id": "showcase-header-title",
+              "name": "Title",
+              "text": "Produit",
+              "textStyle": "section/subtitle",
+              "color": "color/content/neutral/primary"
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-header-right",
+              "name": "Right",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 40,
+              "height": 40,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-header-heart",
+                  "name": "Wishlist",
+                  "text": "♥",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TEXT",
+          "id": "sticky-cta-sublabel",
+          "name": "Sub Label",
+          "text": "Sticky CTA",
+          "textStyle": "body/bold-small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "showcase-sticky-cta",
+          "name": "Sticky CTA",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "itemSpacing": 8,
+          "fills": ["color/bg/neutral/primary"],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "OUTSIDE",
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "showcase-cta-top-row",
+              "name": "Top Row",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "SPACE_BETWEEN",
+              "counterAxisAlignItems": "CENTER",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "showcase-cta-price-block",
+                  "name": "Prices",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "itemSpacing": 2,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-cta-original",
+                      "name": "Original Price",
+                      "text": "299,99 €",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/disabled"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-cta-current",
+                      "name": "Current Price",
+                      "text": "149,99 €",
+                      "textStyle": "price/main/md",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "showcase-cta-discount",
+                  "name": "Discount Badge",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 4,
+                  "paddingBottom": 4,
+                  "paddingLeft": 10,
+                  "paddingRight": 10,
+                  "cornerRadius": 1000,
+                  "fills": ["color/bg/brand/light/default"],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "showcase-cta-discount-text",
+                      "name": "Discount",
+                      "text": "-50%",
+                      "textStyle": "body/bold-small",
+                      "color": "color/content/brand/default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "showcase-cta-button",
+              "name": "CTA Button",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 14,
+              "paddingBottom": 14,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "cornerRadius": 4,
+              "fills": ["color/bg/brand/default"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "showcase-cta-button-text",
+                  "name": "Label",
+                  "text": "Ajouter au panier",
+                  "textStyle": "button/lg",
+                  "color": "color/bg/neutral/primary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

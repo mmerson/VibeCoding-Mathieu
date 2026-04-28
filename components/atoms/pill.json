@@ -1,0 +1,342 @@
+{
+  "frame": {
+    "id": "atoms-pill-frame",
+    "name": "Atoms / Pills",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 24,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "pill-active-row",
+      "name": "Active Pill",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "pill-active-label",
+          "name": "Label",
+          "text": "Active Pill",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-active",
+          "name": "Pill / Active",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-active-text",
+              "name": "Label",
+              "text": "Nouveautés",
+              "textStyle": "body/small",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "pill-default-row",
+      "name": "Default Pill",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "pill-default-label",
+          "name": "Label",
+          "text": "Default Pill",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-default",
+          "name": "Pill / Default",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-default-text",
+              "name": "Label",
+              "text": "Tendances",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "pill-disabled-row",
+      "name": "Disabled Pill",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "pill-disabled-label",
+          "name": "Label",
+          "text": "Disabled Pill",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-disabled",
+          "name": "Pill / Disabled",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-disabled-text",
+              "name": "Label",
+              "text": "Épuisé",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/disabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "pill-outline-row",
+      "name": "Outline Pill",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "pill-outline-label",
+          "name": "Label",
+          "text": "Outline Pill",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-outline",
+          "name": "Pill / Outline",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": [],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-outline-text",
+              "name": "Label",
+              "text": "Promotions",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "pill-row-group",
+      "name": "Pills Row",
+      "layoutMode": "HORIZONTAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "pill-row-active",
+          "name": "Pill / Active",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-row-active-text",
+              "name": "Label",
+              "text": "Tous",
+              "textStyle": "body/small",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-row-default-1",
+          "name": "Pill / Default",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-row-default-1-text",
+              "name": "Label",
+              "text": "Femme",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-row-default-2",
+          "name": "Pill / Default",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": ["color/bg/neutral/secondary"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-row-default-2-text",
+              "name": "Label",
+              "text": "Homme",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "pill-row-outline-1",
+          "name": "Pill / Outline",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 6,
+          "paddingBottom": 6,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 1000,
+          "fills": [],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "pill-row-outline-1-text",
+              "name": "Label",
+              "text": "Enfant",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

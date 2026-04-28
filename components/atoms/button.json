@@ -1,0 +1,264 @@
+{
+  "frame": {
+    "id": "atoms-button-frame",
+    "name": "Atoms / Buttons",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 24,
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "btn-primary-row",
+      "name": "Primary Button",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "btn-primary-label",
+          "name": "Label",
+          "text": "Primary Button",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "btn-primary",
+          "name": "Button / Primary",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-primary-text",
+              "name": "Label",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "btn-secondary-row",
+      "name": "Secondary Button",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "btn-secondary-label",
+          "name": "Label",
+          "text": "Secondary Button (Outlined)",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "btn-secondary",
+          "name": "Button / Secondary",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": [],
+          "strokes": ["color/border/brand/default"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-secondary-text",
+              "name": "Label",
+              "text": "En savoir plus",
+              "textStyle": "button/lg",
+              "color": "color/content/brand/default"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "btn-ghost-row",
+      "name": "Ghost Button",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "btn-ghost-label",
+          "name": "Label",
+          "text": "Ghost / Transparent Button",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "btn-ghost",
+          "name": "Button / Ghost",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-ghost-text",
+              "name": "Label",
+              "text": "Voir les détails",
+              "textStyle": "button/lg",
+              "color": "color/content/brand/default"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "btn-disabled-row",
+      "name": "Disabled Button",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "btn-disabled-label",
+          "name": "Label",
+          "text": "Disabled Button",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "btn-disabled",
+          "name": "Button / Disabled",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/disabled"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-disabled-text",
+              "name": "Label",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "id": "btn-fullwidth-row",
+      "name": "Full-Width Button",
+      "layoutMode": "VERTICAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 8,
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "btn-fullwidth-label",
+          "name": "Label",
+          "text": "Full-Width Button",
+          "textStyle": "body/small",
+          "color": "color/content/neutral/secondary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "type": "FRAME",
+          "id": "btn-fullwidth",
+          "name": "Button / Full-Width",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 12,
+          "paddingBottom": 12,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/default"],
+          "strokes": [],
+          "strokeWeight": 0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-fullwidth-text",
+              "name": "Label",
+              "text": "Ajouter au panier",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

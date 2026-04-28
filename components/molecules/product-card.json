@@ -1,0 +1,318 @@
+{
+  "frame": {
+    "id": "molecule-product-card-frame",
+    "name": "Molecules / Product Card",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 24,
+    "paddingBottom": 24,
+    "paddingLeft": 16,
+    "paddingRight": 16,
+    "itemSpacing": 16,
+    "fills": ["color/bg/neutral/secondary"]
+  },
+  "nodes": [
+    {
+      "type": "FRAME",
+      "id": "product-card-row",
+      "name": "Product Cards Row",
+      "layoutMode": "HORIZONTAL",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "fills": [],
+      "itemSpacing": 12,
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "product-card-1",
+          "name": "Product Card",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 160,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "HUG",
+          "cornerRadius": 8,
+          "fills": ["color/bg/neutral/primary"],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "itemSpacing": 0,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "product-card-1-image",
+              "name": "Image Placeholder",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 160,
+              "height": 160,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "cornerRadius": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "product-card-1-image-icon",
+                  "name": "Icon",
+                  "text": "🖼",
+                  "textStyle": "heading/small",
+                  "color": "color/content/neutral/disabled"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "product-card-1-content",
+              "name": "Content",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "itemSpacing": 4,
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "product-card-1-brand",
+                  "name": "Brand",
+                  "text": "NIKE",
+                  "textStyle": "body/tiny",
+                  "color": "color/content/neutral/secondary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "TEXT",
+                  "id": "product-card-1-name",
+                  "name": "Product Name",
+                  "text": "Air Max 90 Essential Blanc",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "FRAME",
+                  "id": "product-card-1-price-row",
+                  "name": "Price Row",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "CENTER",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "itemSpacing": 4,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-1-price-current",
+                      "name": "Current Price",
+                      "text": "89,99 €",
+                      "textStyle": "price/main/md",
+                      "color": "color/content/neutral/primary"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-1-price-original",
+                      "name": "Original Price",
+                      "text": "149,99 €",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/disabled"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "product-card-1-badge",
+                  "name": "Discount Badge",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 2,
+                  "paddingBottom": 2,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "cornerRadius": 1000,
+                  "fills": ["color/bg/brand/light/default"],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-1-badge-text",
+                      "name": "Discount",
+                      "text": "-40%",
+                      "textStyle": "body/bold-tiny",
+                      "color": "color/content/brand/default"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "product-card-2",
+          "name": "Product Card",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "width": 160,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "HUG",
+          "cornerRadius": 8,
+          "fills": ["color/bg/neutral/primary"],
+          "strokes": ["color/border/neutral/primary"],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "itemSpacing": 0,
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "product-card-2-image",
+              "name": "Image Placeholder",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "width": 160,
+              "height": 160,
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "fills": ["color/bg/neutral/secondary"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "cornerRadius": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "product-card-2-image-icon",
+                  "name": "Icon",
+                  "text": "🖼",
+                  "textStyle": "heading/small",
+                  "color": "color/content/neutral/disabled"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "product-card-2-content",
+              "name": "Content",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "paddingTop": 8,
+              "paddingBottom": 8,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+              "itemSpacing": 4,
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 0,
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "product-card-2-brand",
+                  "name": "Brand",
+                  "text": "ADIDAS",
+                  "textStyle": "body/tiny",
+                  "color": "color/content/neutral/secondary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "TEXT",
+                  "id": "product-card-2-name",
+                  "name": "Product Name",
+                  "text": "Stan Smith Vegan Blanc Vert",
+                  "textStyle": "body/small",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "FRAME",
+                  "id": "product-card-2-price-row",
+                  "name": "Price Row",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "CENTER",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "itemSpacing": 4,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-2-price-current",
+                      "name": "Current Price",
+                      "text": "59,99 €",
+                      "textStyle": "price/main/md",
+                      "color": "color/content/neutral/primary"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-2-price-original",
+                      "name": "Original Price",
+                      "text": "99,99 €",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/disabled"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "product-card-2-badge",
+                  "name": "Discount Badge",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 2,
+                  "paddingBottom": 2,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "cornerRadius": 1000,
+                  "fills": ["color/bg/brand/light/default"],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "product-card-2-badge-text",
+                      "name": "Discount",
+                      "text": "-40%",
+                      "textStyle": "body/bold-tiny",
+                      "color": "color/content/brand/default"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
