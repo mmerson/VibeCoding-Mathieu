@@ -1,0 +1,633 @@
+{
+  "frame": {
+    "id": "return-summary-screen",
+    "name": "Return Summary — Mobile 375",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "primaryAxisSizingMode": "AUTO",
+    "counterAxisSizingMode": "FIXED",
+    "fills": [
+      "color/bg/neutral/primary"
+    ],
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0
+  },
+  "nodes": [
+    {
+      "id": "top-app-bar",
+      "type": "FRAME",
+      "name": "TopAppBar",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "height": 56,
+      "layoutSizingVertical": "FIXED",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 8,
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": "#e3e3e5"
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeAlign": "INSIDE",
+      "children": [
+        {
+          "id": "top-bar-back-btn",
+          "type": "FRAME",
+          "name": "IconBtn / Back",
+          "width": 40,
+          "height": 40,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "fills": [],
+          "cornerRadius": 9999,
+          "children": [
+            {
+              "id": "back-icon-label",
+              "type": "TEXT",
+              "name": "←",
+              "text": "←",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        },
+        {
+          "id": "top-bar-title",
+          "type": "TEXT",
+          "name": "AppBar Title",
+          "text": "Retourner un produit",
+          "textStyle": "body/bold-text",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "id": "top-bar-cart-btn",
+          "type": "FRAME",
+          "name": "IconBtn / Cart",
+          "width": 40,
+          "height": 40,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "fills": [],
+          "cornerRadius": 9999,
+          "children": [
+            {
+              "id": "cart-icon-label",
+              "type": "TEXT",
+              "name": "🛍",
+              "text": "🛍 1",
+              "textStyle": "body/bold-text",
+              "color": "color/content/neutral/primary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return-summary-content",
+      "type": "FRAME",
+      "name": "Content",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "AUTO",
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 32,
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
+      "children": [
+        {
+          "id": "page-title",
+          "type": "TEXT",
+          "name": "Page Title",
+          "text": "Votre retour :",
+          "textStyle": "section/title",
+          "color": "color/content/neutral/primary",
+          "layoutSizingHorizontal": "FILL"
+        },
+        {
+          "id": "product-card",
+          "type": "FRAME",
+          "name": "Product Card",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "AUTO",
+          "itemSpacing": 12,
+          "fills": [],
+          "children": [
+            {
+              "id": "product-card-top",
+              "type": "FRAME",
+              "name": "Product Card / Top Row",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "AUTO",
+              "itemSpacing": 16,
+              "fills": [],
+              "children": [
+                {
+                  "id": "product-thumb",
+                  "type": "FRAME",
+                  "name": "Product Thumbnail",
+                  "width": 104,
+                  "height": 104,
+                  "cornerRadius": 8,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#d6d6d6"
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "id": "product-info",
+                  "type": "FRAME",
+                  "name": "Product Info",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "AUTO",
+                  "paddingTop": 4,
+                  "itemSpacing": 4,
+                  "fills": [],
+                  "children": [
+                    {
+                      "id": "product-brand",
+                      "type": "TEXT",
+                      "name": "Brand",
+                      "text": "Celio",
+                      "textStyle": "body/bold-text",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "id": "product-title",
+                      "type": "TEXT",
+                      "name": "Title",
+                      "text": "Blazer - 100% coton - noir et blanc",
+                      "textStyle": "body/small-regular",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "id": "product-variant",
+                      "type": "TEXT",
+                      "name": "Variant",
+                      "text": "Taille M - 42 (ES)",
+                      "textStyle": "body/small-regular",
+                      "color": "color/content/neutral/secondary",
+                      "layoutSizingHorizontal": "FILL"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "product-meta-list",
+              "type": "FRAME",
+              "name": "Product Meta",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "AUTO",
+              "itemSpacing": 4,
+              "fills": [],
+              "children": [
+                {
+                  "id": "meta-qty",
+                  "type": "TEXT",
+                  "name": "Quantité",
+                  "text": "Quantité retournée : 1",
+                  "textStyle": "body/small-regular",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "id": "meta-reason",
+                  "type": "TEXT",
+                  "name": "Motif",
+                  "text": "Motif du retour : J'ai changé d'avis",
+                  "textStyle": "body/small-regular",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "divider-1",
+          "type": "FRAME",
+          "name": "Divider",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#e3e3e5"
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "section-return-method",
+          "type": "FRAME",
+          "name": "Section — Mode de retour",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "AUTO",
+          "itemSpacing": 16,
+          "fills": [],
+          "children": [
+            {
+              "id": "section-return-method-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Mode de retour",
+              "textStyle": "section/subtitle",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "carrier-card",
+              "type": "FRAME",
+              "name": "Carrier Card",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "CENTER",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "AUTO",
+              "paddingTop": 16,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "itemSpacing": 16,
+              "fills": [
+                "color/bg/neutral/primary"
+              ],
+              "strokes": [
+                {
+                  "type": "SOLID",
+                  "color": "#e3e3e5"
+                }
+              ],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "cornerRadius": 8,
+              "children": [
+                {
+                  "id": "carrier-logo-placeholder",
+                  "type": "FRAME",
+                  "name": "Carrier Logo",
+                  "width": 40,
+                  "height": 40,
+                  "cornerRadius": 8,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#f5f5f7"
+                    }
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "color": "#e3e3e5"
+                    }
+                  ],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "children": [
+                    {
+                      "id": "carrier-logo-label",
+                      "type": "TEXT",
+                      "name": "Logo Label",
+                      "text": "MR",
+                      "textStyle": "body/bold-small",
+                      "color": "color/content/neutral/secondary"
+                    }
+                  ]
+                },
+                {
+                  "id": "carrier-details",
+                  "type": "FRAME",
+                  "name": "Carrier Details",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "AUTO",
+                  "itemSpacing": 2,
+                  "fills": [],
+                  "children": [
+                    {
+                      "id": "carrier-name",
+                      "type": "TEXT",
+                      "name": "Carrier Name",
+                      "text": "Mondial Relay",
+                      "textStyle": "body/bold-text",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "id": "carrier-fee",
+                      "type": "TEXT",
+                      "name": "Carrier Fee",
+                      "text": "6,90 € de frais de retour",
+                      "textStyle": "body/small-regular",
+                      "color": "color/content/neutral/secondary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "id": "carrier-dates",
+                      "type": "TEXT",
+                      "name": "Carrier Dates",
+                      "text": "Lun 09 Fev - Jeu 12 Fev",
+                      "textStyle": "body/bold-small",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "return-method-description",
+              "type": "TEXT",
+              "name": "Description",
+              "text": "Remettre votre colis à n'importe quel point Mondial Relay dans les 14 prochains jours. Nous vous recommandons de vérifier les heures d'ouverture de l'endroit que vous avez choisi avant de vous y rendre.",
+              "textStyle": "body/text-regular",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+        {
+          "id": "divider-2",
+          "type": "FRAME",
+          "name": "Divider",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": "#e3e3e5"
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "section-refund",
+          "type": "FRAME",
+          "name": "Section — Votre remboursement",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "AUTO",
+          "itemSpacing": 16,
+          "fills": [],
+          "children": [
+            {
+              "id": "refund-section-title",
+              "type": "TEXT",
+              "name": "Section Title",
+              "text": "Votre remboursement :",
+              "textStyle": "section/subtitle",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "info-alert",
+              "type": "FRAME",
+              "name": "Info Alert",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "AUTO",
+              "paddingTop": 16,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "itemSpacing": 12,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#edf2ff"
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "SOLID",
+                  "color": "#86a9ff"
+                }
+              ],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "cornerRadius": 4,
+              "children": [
+                {
+                  "id": "alert-icon-badge",
+                  "type": "FRAME",
+                  "name": "Alert Icon",
+                  "width": 20,
+                  "height": 20,
+                  "cornerRadius": 10,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#4c7ef3"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "id": "alert-icon-text",
+                      "type": "TEXT",
+                      "name": "i",
+                      "text": "i",
+                      "textStyle": "body/bold-tiny",
+                      "color": "#ffffff"
+                    }
+                  ]
+                },
+                {
+                  "id": "alert-body",
+                  "type": "FRAME",
+                  "name": "Alert Body",
+                  "layoutMode": "VERTICAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "MIN",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "AUTO",
+                  "itemSpacing": 4,
+                  "fills": [],
+                  "children": [
+                    {
+                      "id": "alert-title",
+                      "type": "TEXT",
+                      "name": "Alert Title",
+                      "text": "À noter",
+                      "textStyle": "body/bold-text",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "id": "alert-message",
+                      "type": "TEXT",
+                      "name": "Alert Message",
+                      "text": "Vous avez demandé l'ajout d'un ou plusieurs articles à votre retour, veuillez noter que le remboursement sera effectué sur la totalité de vos articles sur la méthode de remboursement.",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary",
+                      "layoutSizingHorizontal": "FILL"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "refund-description",
+              "type": "TEXT",
+              "name": "Refund Description",
+              "text": "Vous avez demandé l'ajout d'un ou plusieurs articles à votre retour, veuillez noter que le remboursement sera effectué sur la totalité de vos articles sur la méthode de remboursement.",
+              "textStyle": "body/text-regular",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "refund-details",
+              "type": "TEXT",
+              "name": "Refund Details",
+              "text": "La valeur du ou des produits moins l'étiquette de retour prépayée de votre méthode de retour choisie. Vous pouvez vous attendre à recevoir votre argent dans un délai maximum de 14 jours après que nous ayons reçu les articles. Nous ne rembourserons les frais d'expédition que si le retour concerne la commande complète.",
+              "textStyle": "body/text-regular",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "id": "important-box",
+              "type": "FRAME",
+              "name": "Important Box",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "AUTO",
+              "paddingTop": 16,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": "#f0ebff"
+                }
+              ],
+              "cornerRadius": 8,
+              "children": [
+                {
+                  "id": "important-label",
+                  "type": "TEXT",
+                  "name": "Important Label",
+                  "text": "Important.",
+                  "textStyle": "body/bold-text",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "id": "important-text",
+                  "type": "TEXT",
+                  "name": "Important Text",
+                  "text": "N'oubliez pas d'imprimer le bordereau de retour et de le placer dans la boîte avec les articles que vous souhaitez retourner.",
+                  "textStyle": "body/text-regular",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return-summary-footer",
+      "type": "FRAME",
+      "name": "Footer",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "AUTO",
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "itemSpacing": 8,
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": "#e3e3e5"
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeAlign": "OUTSIDE",
+      "children": [
+        {
+          "id": "confirm-btn",
+          "type": "FRAME",
+          "name": "Button / Confirmer mon retour",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "height": 44,
+          "layoutSizingVertical": "FIXED",
+          "cornerRadius": 4,
+          "fills": [
+            "color/bg/brand/default"
+          ],
+          "children": [
+            {
+              "id": "confirm-btn-label",
+              "type": "TEXT",
+              "name": "Label",
+              "text": "Confirmer mon retour",
+              "textStyle": "button/md",
+              "color": "#ffffff"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
