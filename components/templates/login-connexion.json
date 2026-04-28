@@ -1,0 +1,615 @@
+{
+  "frame": {
+    "id": "login-page",
+    "name": "Login · Connexion / Mobile",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0,
+    "layoutSizingVertical": "HUG",
+    "fills": ["color/bg/neutral/primary"]
+  },
+  "nodes": [
+
+    {
+      "type": "FRAME",
+      "id": "logo-header",
+      "name": "Header / Logo",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "paddingTop": 32,
+      "paddingBottom": 20,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "fills": [],
+      "layoutSizingHorizontal": "FILL",
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "logo",
+          "name": "Logo",
+          "text": "veepee",
+          "textStyle": "heading/small",
+          "color": "color/content/brand/default"
+        }
+      ]
+    },
+
+    {
+      "type": "FRAME",
+      "id": "tabs",
+      "name": "Tabs / Navigation",
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "itemSpacing": 0,
+      "fills": [],
+      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+      "strokeWeight": 1,
+      "strokeAlign": "OUTSIDE",
+      "layoutSizingHorizontal": "FILL",
+      "children": [
+        {
+          "type": "FRAME",
+          "id": "tab-connexion",
+          "name": "Tab / Connexion",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 10,
+          "paddingTop": 14,
+          "paddingBottom": 0,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "tab-connexion-label",
+              "text": "Connexion",
+              "textStyle": "button/md",
+              "color": "color/content/brand/default"
+            },
+            {
+              "type": "FRAME",
+              "id": "tab-connexion-indicator",
+              "name": "Active Indicator",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "FIXED",
+              "height": 2,
+              "fills": ["color/bg/brand/default"]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "id": "tab-inscription",
+          "name": "Tab / Inscription",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 10,
+          "paddingTop": 14,
+          "paddingBottom": 2,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "tab-inscription-label",
+              "text": "Inscription",
+              "textStyle": "button/md",
+              "color": "color/content/neutral/secondary"
+            },
+            {
+              "type": "FRAME",
+              "id": "tab-inscription-indicator",
+              "name": "Inactive Indicator",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "FIXED",
+              "height": 2,
+              "fills": []
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "FRAME",
+      "id": "page-content",
+      "name": "Page Content",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "paddingTop": 28,
+      "paddingBottom": 36,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "itemSpacing": 24,
+      "fills": ["color/bg/neutral/primary"],
+      "layoutSizingHorizontal": "FILL",
+      "children": [
+
+        {
+          "type": "FRAME",
+          "id": "sso-section",
+          "name": "Social Auth / Section",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 20,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "sso-buttons-row",
+              "name": "SSO / Circular Buttons",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 16,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "sso-google",
+                  "name": "SSO / Google",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "layoutSizingHorizontal": "FIXED",
+                  "layoutSizingVertical": "FIXED",
+                  "width": 52,
+                  "height": 52,
+                  "cornerRadius": 1000,
+                  "fills": ["color/bg/neutral/primary"],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "google-icon",
+                      "text": "G",
+                      "textStyle": "button/md",
+                      "color": "color/content/brand/default"
+                    }
+                  ]
+                },
+                {
+                  "type": "FRAME",
+                  "id": "sso-apple",
+                  "name": "SSO / Apple",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "layoutSizingHorizontal": "FIXED",
+                  "layoutSizingVertical": "FIXED",
+                  "width": 52,
+                  "height": 52,
+                  "cornerRadius": 1000,
+                  "fills": [{ "type": "SOLID", "color": "#1a1a1a" }],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "apple-icon",
+                      "text": "",
+                      "textStyle": "button/md",
+                      "color": "color/bg/neutral/primary"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "divider-ou-sso",
+              "name": "Divider / OU",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 12,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "line-l-1",
+                  "layoutMode": "NONE",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "FIXED",
+                  "height": 1,
+                  "fills": ["color/border/neutral/primary"]
+                },
+                {
+                  "type": "TEXT",
+                  "id": "ou-label-1",
+                  "text": "OU",
+                  "textStyle": "body/bold-small",
+                  "color": "color/content/neutral/secondary"
+                },
+                {
+                  "type": "FRAME",
+                  "id": "line-r-1",
+                  "layoutMode": "NONE",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "FIXED",
+                  "height": 1,
+                  "fills": ["color/border/neutral/primary"]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "form-section",
+          "name": "Form / Fields",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 16,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+
+            {
+              "type": "FRAME",
+              "id": "field-email",
+              "name": "VpTextField / Email",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 4,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "email-input",
+                  "name": "Input / Email",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 14,
+                  "paddingBottom": 14,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "cornerRadius": 4,
+                  "fills": ["color/bg/neutral/primary"],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "layoutSizingHorizontal": "FILL",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "email-placeholder",
+                      "text": "Email*",
+                      "textStyle": "body/small-regular",
+                      "color": "color/content/neutral/disabled",
+                      "layoutSizingHorizontal": "FILL"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "type": "FRAME",
+              "id": "field-password",
+              "name": "VpTextField / Mot de passe",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 4,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "password-input",
+                  "name": "Input / Password",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 14,
+                  "paddingBottom": 14,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "itemSpacing": 8,
+                  "cornerRadius": 4,
+                  "fills": ["color/bg/neutral/primary"],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "layoutSizingHorizontal": "FILL",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "password-placeholder",
+                      "text": "Mot de passe*",
+                      "textStyle": "body/small-regular",
+                      "color": "color/content/neutral/disabled",
+                      "layoutSizingHorizontal": "FILL"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "password-toggle",
+                      "name": "Toggle visibility",
+                      "text": "⊙",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/secondary"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "type": "FRAME",
+              "id": "form-actions-row",
+              "name": "Form / Actions Row",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "SPACE_BETWEEN",
+              "counterAxisAlignItems": "CENTER",
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "remember-me",
+                  "name": "Remember Me",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "MIN",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 8,
+                  "fills": [],
+                  "children": [
+                    {
+                      "type": "FRAME",
+                      "id": "checkbox-checked",
+                      "name": "Checkbox / Checked",
+                      "layoutMode": "HORIZONTAL",
+                      "primaryAxisAlignItems": "CENTER",
+                      "counterAxisAlignItems": "CENTER",
+                      "layoutSizingHorizontal": "FIXED",
+                      "layoutSizingVertical": "FIXED",
+                      "width": 18,
+                      "height": 18,
+                      "cornerRadius": 3,
+                      "fills": ["color/bg/brand/default"],
+                      "children": [
+                        {
+                          "type": "TEXT",
+                          "id": "checkbox-check",
+                          "text": "✓",
+                          "textStyle": "body/bold-tiny",
+                          "color": "color/bg/neutral/primary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "remember-me-label",
+                      "text": "Rester connecté",
+                      "textStyle": "body/small",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                },
+                {
+                  "type": "TEXT",
+                  "id": "forgot-password",
+                  "name": "Forgot Password Link",
+                  "text": "Mot de passe oublié ?",
+                  "textStyle": "body/small",
+                  "color": "color/content/brand/default"
+                }
+              ]
+            }
+
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "cta-section",
+          "name": "Primary Actions",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 12,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "btn-se-connecter",
+              "name": "Button / Se connecter",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 14,
+              "paddingBottom": 14,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "cornerRadius": 4,
+              "fills": [],
+              "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+              "strokeWeight": 1,
+              "strokeAlign": "INSIDE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "btn-connecter-label",
+                  "text": "Se connecter",
+                  "textStyle": "button/lg",
+                  "color": "color/content/brand/default"
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "divider-ou-cta",
+              "name": "Divider / OU",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 12,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "FRAME",
+                  "id": "line-l-2",
+                  "layoutMode": "NONE",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "FIXED",
+                  "height": 1,
+                  "fills": ["color/border/neutral/primary"]
+                },
+                {
+                  "type": "TEXT",
+                  "id": "ou-label-2",
+                  "text": "OU",
+                  "textStyle": "body/bold-small",
+                  "color": "color/content/neutral/secondary"
+                },
+                {
+                  "type": "FRAME",
+                  "id": "line-r-2",
+                  "layoutMode": "NONE",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "FIXED",
+                  "height": 1,
+                  "fills": ["color/border/neutral/primary"]
+                }
+              ]
+            },
+            {
+              "type": "FRAME",
+              "id": "btn-s-inscrire",
+              "name": "Button / S'inscrire",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "CENTER",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 14,
+              "paddingBottom": 14,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "cornerRadius": 4,
+              "fills": ["color/bg/brand/default"],
+              "strokes": [],
+              "strokeWeight": 0,
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "btn-inscrire-label",
+                  "text": "S'inscrire",
+                  "textStyle": "button/lg",
+                  "color": "color/bg/neutral/primary"
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "marketing-footer",
+          "name": "Marketing / Footer",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "paddingTop": 20,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "itemSpacing": 8,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "footer-divider",
+              "name": "Divider",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "FIXED",
+              "height": 1,
+              "fills": ["color/border/neutral/primary"]
+            },
+            {
+              "type": "FRAME",
+              "id": "footer-content",
+              "name": "Footer / Content",
+              "layoutMode": "VERTICAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "paddingTop": 20,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "itemSpacing": 6,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "footer-text-1",
+                  "name": "Footer / Bold",
+                  "text": "Découvrez de belles marques jusqu'à -70% et bien d'autres surprises.",
+                  "textStyle": "body/bold-small",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "TEXT",
+                  "id": "footer-text-2",
+                  "name": "Footer / Link",
+                  "text": "Veepee en quelques mots !",
+                  "textStyle": "body/bold-small",
+                  "color": "color/content/brand/default",
+                  "layoutSizingHorizontal": "FILL"
+                },
+                {
+                  "type": "TEXT",
+                  "id": "footer-text-3",
+                  "name": "Footer / Body",
+                  "text": "Sur Veepee, profitez de réductions exclusives sur de grandes marques ! Chaque jour de nouvelles ventes évènementielles.",
+                  "textStyle": "body/tiny-regular",
+                  "color": "color/content/neutral/secondary",
+                  "layoutSizingHorizontal": "FILL"
+                }
+              ]
+            }
+          ]
+        }
+
+      ]
+    }
+
+  ]
+}
