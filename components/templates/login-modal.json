@@ -1,0 +1,396 @@
+{
+  "frame": {
+    "id": "login-screen",
+    "name": "Login · Welcome Modal",
+    "width": 375,
+    "layoutMode": "VERTICAL",
+    "primaryAxisAlignItems": "MIN",
+    "counterAxisAlignItems": "MIN",
+    "paddingTop": 0,
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "itemSpacing": 0,
+    "fills": [{ "type": "SOLID", "color": "#1e1e28" }]
+  },
+  "nodes": [
+
+    {
+      "type": "FRAME",
+      "id": "page-dimmed",
+      "name": "Page / Dimmed",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "height": 220,
+      "fills": [{ "type": "SOLID", "color": "#1e1e28" }],
+      "children": [
+        {
+          "type": "TEXT",
+          "id": "veepee-logo",
+          "name": "Brand",
+          "text": "veepee",
+          "textStyle": "heading/small",
+          "color": "color/bg/neutral/primary",
+          "layoutSizingHorizontal": "HUG"
+        }
+      ]
+    },
+
+    {
+      "type": "FRAME",
+      "id": "modal-card",
+      "name": "Modal / Login Card",
+      "layoutMode": "VERTICAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "MIN",
+      "paddingTop": 16,
+      "paddingBottom": 40,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "itemSpacing": 20,
+      "cornerRadius": 16,
+      "fills": ["color/bg/neutral/primary"],
+      "layoutSizingHorizontal": "FILL",
+      "children": [
+
+        {
+          "type": "FRAME",
+          "id": "handle-row",
+          "name": "Handle",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "paddingBottom": 4,
+          "fills": [],
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "handle-bar",
+              "name": "Handle Bar",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FIXED",
+              "layoutSizingVertical": "FIXED",
+              "width": 40,
+              "height": 4,
+              "cornerRadius": 1000,
+              "fills": ["color/border/neutral/primary"]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "header",
+          "name": "Header / Text",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 8,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "modal-title",
+              "name": "Title",
+              "text": "Connectez-vous ou créez un compte pour voir les ventes du jour",
+              "textStyle": "heading/small",
+              "color": "color/content/neutral/primary",
+              "layoutSizingHorizontal": "FILL"
+            },
+            {
+              "type": "TEXT",
+              "id": "modal-subtitle",
+              "name": "Subtitle",
+              "text": "Entrez votre email pour vérifier l'existence de votre compte ou vous inscrire",
+              "textStyle": "body/small-regular",
+              "color": "color/content/neutral/secondary",
+              "layoutSizingHorizontal": "FILL"
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "textfield-email",
+          "name": "VpTextField / Email",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "MIN",
+          "itemSpacing": 4,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "email-label",
+              "name": "Label",
+              "text": "Email*",
+              "textStyle": "body/bold-small",
+              "color": "color/content/neutral/secondary"
+            },
+            {
+              "type": "FRAME",
+              "id": "email-input",
+              "name": "Input",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "CENTER",
+              "paddingTop": 14,
+              "paddingBottom": 14,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "itemSpacing": 8,
+              "cornerRadius": 4,
+              "fills": ["color/bg/neutral/primary"],
+              "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+              "strokeWeight": 2,
+              "strokeAlign": "INSIDE",
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+                {
+                  "type": "TEXT",
+                  "id": "email-value",
+                  "name": "Value",
+                  "text": "mmerson@veepee.com",
+                  "textStyle": "body/small-regular",
+                  "color": "color/content/neutral/primary",
+                  "layoutSizingHorizontal": "FILL"
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "btn-email-cta",
+          "name": "Button / Primary / Email",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 14,
+          "paddingBottom": 14,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": ["color/bg/brand/default"],
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-email-text",
+              "name": "Label",
+              "text": "Continuer avec un email",
+              "textStyle": "button/lg",
+              "color": "color/bg/neutral/primary"
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "divider-ou",
+          "name": "Divider / Ou",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 12,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "FRAME",
+              "id": "line-left",
+              "name": "Line",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "FIXED",
+              "height": 1,
+              "fills": ["color/border/neutral/primary"]
+            },
+            {
+              "type": "TEXT",
+              "id": "ou-text",
+              "name": "Ou",
+              "text": "Ou",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/secondary"
+            },
+            {
+              "type": "FRAME",
+              "id": "line-right",
+              "name": "Line",
+              "layoutMode": "NONE",
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "FIXED",
+              "height": 1,
+              "fills": ["color/border/neutral/primary"]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "sso-section",
+          "name": "SSO / Section",
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 12,
+          "fills": [],
+          "layoutSizingHorizontal": "FILL",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "sso-label",
+              "name": "Label",
+              "text": "Continuer avec",
+              "textStyle": "body/small",
+              "color": "color/content/neutral/secondary"
+            },
+            {
+              "type": "FRAME",
+              "id": "sso-buttons-row",
+              "name": "SSO / Buttons Row",
+              "layoutMode": "HORIZONTAL",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "CENTER",
+              "itemSpacing": 12,
+              "fills": [],
+              "layoutSizingHorizontal": "FILL",
+              "children": [
+
+                {
+                  "type": "FRAME",
+                  "id": "btn-google",
+                  "name": "Button / SSO / Google",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 12,
+                  "paddingBottom": 12,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "itemSpacing": 8,
+                  "cornerRadius": 4,
+                  "fills": ["color/bg/neutral/primary"],
+                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "strokeWeight": 1,
+                  "strokeAlign": "INSIDE",
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "google-icon",
+                      "name": "Icon",
+                      "text": "G",
+                      "textStyle": "button/md",
+                      "color": "color/content/brand/default"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "google-label",
+                      "name": "Label",
+                      "text": "Google",
+                      "textStyle": "button/md",
+                      "color": "color/content/neutral/primary"
+                    }
+                  ]
+                },
+
+                {
+                  "type": "FRAME",
+                  "id": "btn-apple",
+                  "name": "Button / SSO / Apple",
+                  "layoutMode": "HORIZONTAL",
+                  "primaryAxisAlignItems": "CENTER",
+                  "counterAxisAlignItems": "CENTER",
+                  "paddingTop": 12,
+                  "paddingBottom": 12,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "itemSpacing": 8,
+                  "cornerRadius": 4,
+                  "fills": [{ "type": "SOLID", "color": "#1a1a1a" }],
+                  "strokes": [],
+                  "strokeWeight": 0,
+                  "layoutSizingHorizontal": "FILL",
+                  "layoutSizingVertical": "HUG",
+                  "children": [
+                    {
+                      "type": "TEXT",
+                      "id": "apple-icon",
+                      "name": "Icon",
+                      "text": "",
+                      "textStyle": "button/md",
+                      "color": "color/bg/neutral/primary"
+                    },
+                    {
+                      "type": "TEXT",
+                      "id": "apple-label",
+                      "name": "Label",
+                      "text": "Apple",
+                      "textStyle": "button/md",
+                      "color": "color/bg/neutral/primary"
+                    }
+                  ]
+                }
+
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "divider-bottom",
+          "name": "Divider",
+          "layoutMode": "NONE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FIXED",
+          "height": 1,
+          "fills": ["color/border/neutral/primary"]
+        },
+
+        {
+          "type": "FRAME",
+          "id": "btn-envoyer",
+          "name": "Button / Ghost / Envoyer",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "paddingTop": 14,
+          "paddingBottom": 14,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 4,
+          "fills": [],
+          "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+          "strokeWeight": 1,
+          "strokeAlign": "INSIDE",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "children": [
+            {
+              "type": "TEXT",
+              "id": "btn-envoyer-text",
+              "name": "Label",
+              "text": "Envoyer",
+              "textStyle": "button/lg",
+              "color": "color/content/brand/default"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
