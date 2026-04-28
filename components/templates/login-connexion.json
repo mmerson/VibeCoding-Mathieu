@@ -12,10 +12,11 @@
     "paddingRight": 0,
     "itemSpacing": 0,
     "layoutSizingVertical": "HUG",
-    "fills": ["color/bg/neutral/primary"]
+    "fills": [
+      "color/bg/neutral/primary"
+    ]
   },
   "nodes": [
-
     {
       "type": "FRAME",
       "id": "logo-header",
@@ -40,7 +41,6 @@
         }
       ]
     },
-
     {
       "type": "FRAME",
       "id": "tabs",
@@ -50,7 +50,12 @@
       "counterAxisAlignItems": "MIN",
       "itemSpacing": 0,
       "fills": [],
-      "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "color": "color/border/neutral/primary"
+        }
+      ],
       "strokeWeight": 1,
       "strokeAlign": "OUTSIDE",
       "layoutSizingHorizontal": "FILL",
@@ -85,7 +90,9 @@
               "layoutSizingHorizontal": "FILL",
               "layoutSizingVertical": "FIXED",
               "height": 2,
-              "fills": ["color/bg/brand/default"]
+              "fills": [
+                "color/bg/brand/default"
+              ]
             }
           ]
         },
@@ -125,7 +132,6 @@
         }
       ]
     },
-
     {
       "type": "FRAME",
       "id": "page-content",
@@ -138,10 +144,11 @@
       "paddingLeft": 24,
       "paddingRight": 24,
       "itemSpacing": 24,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "layoutSizingHorizontal": "FILL",
       "children": [
-
         {
           "type": "FRAME",
           "id": "sso-section",
@@ -176,8 +183,15 @@
                   "width": 52,
                   "height": 52,
                   "cornerRadius": 1000,
-                  "fills": ["color/bg/neutral/primary"],
-                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "fills": [
+                    "color/bg/neutral/primary"
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "color": "color/border/neutral/primary"
+                    }
+                  ],
                   "strokeWeight": 1,
                   "strokeAlign": "INSIDE",
                   "children": [
@@ -202,7 +216,12 @@
                   "width": 52,
                   "height": 52,
                   "cornerRadius": 1000,
-                  "fills": [{ "type": "SOLID", "color": "#1a1a1a" }],
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#1a1a1a"
+                    }
+                  ],
                   "strokes": [],
                   "strokeWeight": 0,
                   "children": [
@@ -235,7 +254,9 @@
                   "layoutSizingHorizontal": "FILL",
                   "layoutSizingVertical": "FIXED",
                   "height": 1,
-                  "fills": ["color/border/neutral/primary"]
+                  "fills": [
+                    "color/border/neutral/primary"
+                  ]
                 },
                 {
                   "type": "TEXT",
@@ -251,13 +272,14 @@
                   "layoutSizingHorizontal": "FILL",
                   "layoutSizingVertical": "FIXED",
                   "height": 1,
-                  "fills": ["color/border/neutral/primary"]
+                  "fills": [
+                    "color/border/neutral/primary"
+                  ]
                 }
               ]
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "form-section",
@@ -269,7 +291,6 @@
           "fills": [],
           "layoutSizingHorizontal": "FILL",
           "children": [
-
             {
               "type": "FRAME",
               "id": "field-email",
@@ -293,8 +314,15 @@
                   "paddingLeft": 16,
                   "paddingRight": 16,
                   "cornerRadius": 4,
-                  "fills": ["color/bg/neutral/primary"],
-                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "fills": [
+                    "color/bg/neutral/primary"
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "color": "color/border/neutral/primary"
+                    }
+                  ],
                   "strokeWeight": 1,
                   "strokeAlign": "INSIDE",
                   "layoutSizingHorizontal": "FILL",
@@ -311,7 +339,6 @@
                 }
               ]
             },
-
             {
               "type": "FRAME",
               "id": "field-password",
@@ -336,8 +363,15 @@
                   "paddingRight": 16,
                   "itemSpacing": 8,
                   "cornerRadius": 4,
-                  "fills": ["color/bg/neutral/primary"],
-                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "fills": [
+                    "color/bg/neutral/primary"
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "color": "color/border/neutral/primary"
+                    }
+                  ],
                   "strokeWeight": 1,
                   "strokeAlign": "INSIDE",
                   "layoutSizingHorizontal": "FILL",
@@ -362,7 +396,6 @@
                 }
               ]
             },
-
             {
               "type": "FRAME",
               "id": "form-actions-row",
@@ -395,7 +428,9 @@
                       "width": 18,
                       "height": 18,
                       "cornerRadius": 3,
-                      "fills": ["color/bg/brand/default"],
+                      "fills": [
+                        "color/bg/brand/default"
+                      ],
                       "children": [
                         {
                           "type": "TEXT",
@@ -425,10 +460,8 @@
                 }
               ]
             }
-
           ]
         },
-
         {
           "type": "FRAME",
           "id": "cta-section",
@@ -453,7 +486,12 @@
               "paddingRight": 16,
               "cornerRadius": 4,
               "fills": [],
-              "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+              "strokes": [
+                {
+                  "type": "SOLID",
+                  "color": "color/border/brand/default"
+                }
+              ],
               "strokeWeight": 1,
               "strokeAlign": "INSIDE",
               "layoutSizingHorizontal": "FILL",
@@ -486,7 +524,9 @@
                   "layoutSizingHorizontal": "FILL",
                   "layoutSizingVertical": "FIXED",
                   "height": 1,
-                  "fills": ["color/border/neutral/primary"]
+                  "fills": [
+                    "color/border/neutral/primary"
+                  ]
                 },
                 {
                   "type": "TEXT",
@@ -502,7 +542,9 @@
                   "layoutSizingHorizontal": "FILL",
                   "layoutSizingVertical": "FIXED",
                   "height": 1,
-                  "fills": ["color/border/neutral/primary"]
+                  "fills": [
+                    "color/border/neutral/primary"
+                  ]
                 }
               ]
             },
@@ -518,7 +560,9 @@
               "paddingLeft": 16,
               "paddingRight": 16,
               "cornerRadius": 4,
-              "fills": ["color/bg/brand/default"],
+              "fills": [
+                "color/bg/brand/default"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "FILL",
@@ -535,7 +579,6 @@
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "marketing-footer",
@@ -559,7 +602,9 @@
               "layoutSizingHorizontal": "FILL",
               "layoutSizingVertical": "FIXED",
               "height": 1,
-              "fills": ["color/border/neutral/primary"]
+              "fills": [
+                "color/border/neutral/primary"
+              ]
             },
             {
               "type": "FRAME",
@@ -607,9 +652,7 @@
             }
           ]
         }
-
       ]
     }
-
   ]
 }

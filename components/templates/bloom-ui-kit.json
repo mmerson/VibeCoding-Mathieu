@@ -59,10 +59,7 @@
               "name": "Title",
               "text": "Bloom UI Kit",
               "textStyle": "heading/small",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff"
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             },
             {
@@ -71,11 +68,7 @@
               "name": "Subtitle",
               "text": "Basé sur Bloom 4 · shadcn architecture · 14 composants",
               "textStyle": "body/small",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -663,11 +656,7 @@
               "name": "Desc",
               "text": "7 variants · 3 tailles · loading · fullWidth",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -878,10 +867,7 @@
                           "id": "btn-destructive-text",
                           "text": "Supprimer",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -908,10 +894,7 @@
                           "id": "btn-link-text",
                           "text": "En savoir plus",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#d90082"
-                          }
+                          "color": "#d90082"
                         }
                       ],
                       "strokes": []
@@ -943,10 +926,7 @@
                           "id": "btn-dark-text",
                           "text": "Option",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1020,10 +1000,7 @@
                           "id": "btn-sm-text",
                           "text": "Small",
                           "textStyle": "button/sm",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1052,10 +1029,7 @@
                           "id": "btn-md-text",
                           "text": "Medium",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1084,10 +1058,7 @@
                           "id": "btn-lg-text",
                           "text": "Large",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1161,10 +1132,7 @@
                           "id": "btn-loading-text",
                           "text": "⏳ Chargement…",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1196,10 +1164,7 @@
                           "id": "btn-disabled-text",
                           "text": "Disabled",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1228,10 +1193,7 @@
                           "id": "btn-fullwidth-text",
                           "text": "Ajouter au panier — Bouton pleine largeur",
                           "textStyle": "button/lg",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -1293,11 +1255,7 @@
               "name": "Desc",
               "text": "Label · Helper text · Error · Disabled · Icons",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -1547,10 +1505,7 @@
                           "id": "input-error-helper",
                           "text": "Format invalide",
                           "textStyle": "body/tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#dd1f29"
-                          }
+                          "color": "#dd1f29"
                         }
                       ]
                     },
@@ -1671,11 +1626,7 @@
               "name": "Desc",
               "text": "10 variants · Solid · Outline · 2 tailles",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -1792,10 +1743,7 @@
                           "id": "badge-brand-solid-text",
                           "text": "Promo",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     },
@@ -1825,10 +1773,7 @@
                           "id": "badge-success-text",
                           "text": "Livré",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#0f9f40"
-                          }
+                          "color": "#0f9f40"
                         }
                       ]
                     },
@@ -1858,10 +1803,7 @@
                           "id": "badge-error-text",
                           "text": "Erreur",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#dd1f29"
-                          }
+                          "color": "#dd1f29"
                         }
                       ]
                     },
@@ -1891,10 +1833,7 @@
                           "id": "badge-warning-text",
                           "text": "En attente",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#f5a623"
-                          }
+                          "color": "#f5a623"
                         }
                       ]
                     },
@@ -1924,10 +1863,7 @@
                           "id": "badge-info-text",
                           "text": "Info",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#0c4df0"
-                          }
+                          "color": "#0c4df0"
                         }
                       ]
                     },
@@ -1981,10 +1917,7 @@
                           "id": "badge-discount-text",
                           "text": "-50%",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     }
@@ -2086,10 +2019,7 @@
                           "id": "badge-outline-success-text",
                           "text": "Livré",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#0f9f40"
-                          }
+                          "color": "#0f9f40"
                         }
                       ],
                       "strokes": [
@@ -2121,10 +2051,7 @@
                           "id": "badge-outline-error-text",
                           "text": "Erreur",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#dd1f29"
-                          }
+                          "color": "#dd1f29"
                         }
                       ],
                       "strokes": [
@@ -2156,10 +2083,7 @@
                           "id": "badge-outline-warning-text",
                           "text": "En attente",
                           "textStyle": "body/bold-tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#f5a623"
-                          }
+                          "color": "#f5a623"
                         }
                       ],
                       "strokes": [
@@ -2227,11 +2151,7 @@
               "name": "Desc",
               "text": "4 variants · Closeable · Sélection multiple",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -2321,10 +2241,7 @@
                           "id": "pill-active-text",
                           "text": "Mode",
                           "textStyle": "button/sm",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -2483,10 +2400,7 @@
                           "id": "pill-close-active-text",
                           "text": "Mode ×",
                           "textStyle": "button/sm",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -2645,10 +2559,7 @@
                           "id": "pill-sel-1-text",
                           "text": "Mode ×",
                           "textStyle": "button/sm",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -2676,10 +2587,7 @@
                           "id": "pill-sel-2-text",
                           "text": "Sport ×",
                           "textStyle": "button/sm",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ],
                       "strokes": []
@@ -2909,11 +2817,7 @@
               "name": "Desc",
               "text": "3 variants · Header/Content/Footer",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -3156,10 +3060,7 @@
                                   "id": "card-default-cta-text",
                                   "text": "Acheter",
                                   "textStyle": "button/sm",
-                                  "color": {
-                                    "type": "SOLID",
-                                    "color": "#ffffff"
-                                  }
+                                  "color": "#ffffff"
                                 }
                               ]
                             }
@@ -3350,10 +3251,7 @@
                                   "id": "card-flat-cta-text",
                                   "text": "Acheter",
                                   "textStyle": "button/sm",
-                                  "color": {
-                                    "type": "SOLID",
-                                    "color": "#ffffff"
-                                  }
+                                  "color": "#ffffff"
                                 }
                               ]
                             }
@@ -3538,10 +3436,7 @@
                                   "id": "card-elevated-cta-text",
                                   "text": "Acheter",
                                   "textStyle": "button/sm",
-                                  "color": {
-                                    "type": "SOLID",
-                                    "color": "#ffffff"
-                                  }
+                                  "color": "#ffffff"
                                 }
                               ]
                             }
@@ -3607,11 +3502,7 @@
               "name": "Desc",
               "text": "Ligne (underline) · Contained (segmented pill)",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -4085,11 +3976,7 @@
               "name": "Desc",
               "text": "Tous les états · Tailles multiples",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -4247,10 +4134,7 @@
                               "id": "cb-check-icon",
                               "text": "✓",
                               "textStyle": "body/bold-tiny",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -4303,10 +4187,7 @@
                               "id": "cb-indet-icon",
                               "text": "—",
                               "textStyle": "body/bold-tiny",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -4366,10 +4247,7 @@
                           "id": "checkbox-error-label",
                           "text": "Erreur",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#dd1f29"
-                          }
+                          "color": "#dd1f29"
                         }
                       ]
                     },
@@ -4807,11 +4685,7 @@
               "name": "Desc",
               "text": "5 variantes · Titre · Description · Fermable",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -5017,10 +4891,7 @@
                               "id": "alert-success-icon-text",
                               "text": "✓",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#0f9f40"
-                              }
+                              "color": "#0f9f40"
                             }
                           ]
                         },
@@ -5045,10 +4916,7 @@
                               "id": "alert-success-title",
                               "text": "Commande confirmée",
                               "textStyle": "body/bold-small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#0f9f40"
-                              }
+                              "color": "#0f9f40"
                             },
                             {
                               "type": "TEXT",
@@ -5112,10 +4980,7 @@
                               "id": "alert-error-icon-text",
                               "text": "✗",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#dd1f29"
-                              }
+                              "color": "#dd1f29"
                             }
                           ]
                         },
@@ -5140,10 +5005,7 @@
                               "id": "alert-error-title",
                               "text": "Erreur de paiement",
                               "textStyle": "body/bold-small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#dd1f29"
-                              }
+                              "color": "#dd1f29"
                             },
                             {
                               "type": "TEXT",
@@ -5207,10 +5069,7 @@
                               "id": "alert-warning-icon-text",
                               "text": "⚠",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#f5a623"
-                              }
+                              "color": "#f5a623"
                             }
                           ]
                         },
@@ -5235,10 +5094,7 @@
                               "id": "alert-warning-title",
                               "text": "Stock limité",
                               "textStyle": "body/bold-small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#f5a623"
-                              }
+                              "color": "#f5a623"
                             },
                             {
                               "type": "TEXT",
@@ -5302,10 +5158,7 @@
                               "id": "alert-info-icon-text",
                               "text": "ℹ",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#0c4df0"
-                              }
+                              "color": "#0c4df0"
                             }
                           ]
                         },
@@ -5330,10 +5183,7 @@
                               "id": "alert-info-title",
                               "text": "Mise à jour disponible",
                               "textStyle": "body/bold-small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#0c4df0"
-                              }
+                              "color": "#0c4df0"
                             },
                             {
                               "type": "TEXT",
@@ -5404,11 +5254,7 @@
               "name": "Desc",
               "text": "5 tailles · Initiales · Status · AvatarGroup",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -5515,10 +5361,7 @@
                               "id": "avatar-xs-text",
                               "text": "MM",
                               "textStyle": "body/tiny",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -5571,10 +5414,7 @@
                               "id": "avatar-sm-text",
                               "text": "MM",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -5627,10 +5467,7 @@
                               "id": "avatar-md-text",
                               "text": "MM",
                               "textStyle": "body/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -5683,10 +5520,7 @@
                               "id": "avatar-lg-text",
                               "text": "MM",
                               "textStyle": "section/subtitle",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -5739,10 +5573,7 @@
                               "id": "avatar-xl-text",
                               "text": "MM",
                               "textStyle": "heading/small",
-                              "color": {
-                                "type": "SOLID",
-                                "color": "#ffffff"
-                              }
+                              "color": "#ffffff"
                             }
                           ]
                         },
@@ -5824,10 +5655,7 @@
                           "id": "avatar-variant-brand-text",
                           "text": "MM",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     },
@@ -5970,10 +5798,7 @@
                           "id": "avatar-group-1-text",
                           "text": "MM",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     },
@@ -6011,10 +5836,7 @@
                           "id": "avatar-group-2-text",
                           "text": "JD",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     },
@@ -6052,10 +5874,7 @@
                           "id": "avatar-group-3-text",
                           "text": "AB",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     },
@@ -6093,10 +5912,7 @@
                           "id": "avatar-group-4-text",
                           "text": "+3",
                           "textStyle": "body/small",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#ffffff"
-                          }
+                          "color": "#ffffff"
                         }
                       ]
                     }
@@ -6157,11 +5973,7 @@
               "name": "Desc",
               "text": "Utilitaires",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -6851,11 +6663,7 @@
               "name": "Desc",
               "text": "Formulaires — Tous les états",
               "textStyle": "body/small-regular",
-              "color": {
-                "type": "SOLID",
-                "color": "#ffffff",
-                "opacity": 0.8
-              },
+              "color": "#ffffff",
               "layoutSizingHorizontal": "FILL"
             }
           ]
@@ -7217,10 +7025,7 @@
                           "id": "select-error-helper",
                           "text": "Veuillez sélectionner une option",
                           "textStyle": "body/tiny",
-                          "color": {
-                            "type": "SOLID",
-                            "color": "#dd1f29"
-                          }
+                          "color": "#dd1f29"
                         }
                       ]
                     },

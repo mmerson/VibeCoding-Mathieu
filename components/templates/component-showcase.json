@@ -11,7 +11,9 @@
     "paddingLeft": 0,
     "paddingRight": 0,
     "itemSpacing": 0,
-    "fills": ["color/bg/neutral/secondary"]
+    "fills": [
+      "color/bg/neutral/secondary"
+    ]
   },
   "nodes": [
     {
@@ -28,7 +30,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -49,7 +53,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -136,7 +142,9 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 8,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": []
@@ -155,7 +163,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -176,7 +186,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -193,7 +205,9 @@
           "paddingLeft": 16,
           "paddingRight": 16,
           "cornerRadius": 4,
-          "fills": ["color/bg/brand/default"],
+          "fills": [
+            "color/bg/brand/default"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "layoutSizingHorizontal": "FILL",
@@ -222,7 +236,9 @@
           "paddingRight": 16,
           "cornerRadius": 4,
           "fills": [],
-          "strokes": ["color/border/brand/default"],
+          "strokes": [
+            "color/border/brand/default"
+          ],
           "strokeWeight": 1,
           "strokeAlign": "INSIDE",
           "layoutSizingHorizontal": "FILL",
@@ -278,7 +294,9 @@
           "paddingLeft": 16,
           "paddingRight": 16,
           "cornerRadius": 4,
-          "fills": ["color/bg/brand/disabled"],
+          "fills": [
+            "color/bg/brand/disabled"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "layoutSizingHorizontal": "FILL",
@@ -304,7 +322,9 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 8,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": []
@@ -323,7 +343,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -344,7 +366,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -384,7 +408,9 @@
               "paddingLeft": 12,
               "paddingRight": 12,
               "cornerRadius": 1000,
-              "fills": ["color/bg/brand/default"],
+              "fills": [
+                "color/bg/brand/default"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -412,7 +438,9 @@
               "paddingLeft": 12,
               "paddingRight": 12,
               "cornerRadius": 1000,
-              "fills": ["color/bg/neutral/secondary"],
+              "fills": [
+                "color/bg/neutral/secondary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -441,7 +469,9 @@
               "paddingRight": 12,
               "cornerRadius": 1000,
               "fills": [],
-              "strokes": ["color/border/neutral/primary"],
+              "strokes": [
+                "color/border/neutral/primary"
+              ],
               "strokeWeight": 1,
               "strokeAlign": "INSIDE",
               "layoutSizingHorizontal": "HUG",
@@ -469,7 +499,9 @@
               "paddingLeft": 12,
               "paddingRight": 12,
               "cornerRadius": 1000,
-              "fills": ["color/bg/neutral/secondary"],
+              "fills": [
+                "color/bg/neutral/secondary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -522,7 +554,9 @@
               "paddingLeft": 8,
               "paddingRight": 8,
               "cornerRadius": 1000,
-              "fills": ["color/bg/brand/light/default"],
+              "fills": [
+                "color/bg/brand/light/default"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -550,7 +584,11 @@
               "paddingLeft": 8,
               "paddingRight": 8,
               "cornerRadius": 1000,
-              "fills": [{ "hex": "#e6f7ec" }],
+              "fills": [
+                {
+                  "hex": "#e6f7ec"
+                }
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -562,7 +600,9 @@
                   "name": "Label",
                   "text": "En stock",
                   "textStyle": "body/tiny",
-                  "color": { "hex": "#0f9f40" }
+                  "color": {
+                    "hex": "#0f9f40"
+                  }
                 }
               ]
             },
@@ -578,7 +618,11 @@
               "paddingLeft": 8,
               "paddingRight": 8,
               "cornerRadius": 1000,
-              "fills": [{ "hex": "#ffecec" }],
+              "fills": [
+                {
+                  "hex": "#ffecec"
+                }
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -590,7 +634,9 @@
                   "name": "Label",
                   "text": "Épuisé",
                   "textStyle": "body/tiny",
-                  "color": { "hex": "#dd1f29" }
+                  "color": {
+                    "hex": "#dd1f29"
+                  }
                 }
               ]
             },
@@ -606,7 +652,9 @@
               "paddingLeft": 8,
               "paddingRight": 8,
               "cornerRadius": 1000,
-              "fills": ["color/bg/neutral/secondary"],
+              "fills": [
+                "color/bg/neutral/secondary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "HUG",
@@ -634,7 +682,9 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 8,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": []
@@ -653,7 +703,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -674,7 +726,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -704,8 +758,12 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "HUG",
               "cornerRadius": 8,
-              "fills": ["color/bg/neutral/primary"],
-              "strokes": ["color/border/neutral/primary"],
+              "fills": [
+                "color/bg/neutral/primary"
+              ],
+              "strokes": [
+                "color/border/neutral/primary"
+              ],
               "strokeWeight": 1,
               "strokeAlign": "INSIDE",
               "itemSpacing": 0,
@@ -721,7 +779,9 @@
                   "height": 160,
                   "layoutSizingHorizontal": "FIXED",
                   "layoutSizingVertical": "FIXED",
-                  "fills": ["color/bg/neutral/secondary"],
+                  "fills": [
+                    "color/bg/neutral/secondary"
+                  ],
                   "strokes": [],
                   "strokeWeight": 0,
                   "cornerRadius": 0,
@@ -816,7 +876,9 @@
                       "paddingLeft": 8,
                       "paddingRight": 8,
                       "cornerRadius": 1000,
-                      "fills": ["color/bg/brand/light/default"],
+                      "fills": [
+                        "color/bg/brand/light/default"
+                      ],
                       "strokes": [],
                       "strokeWeight": 0,
                       "layoutSizingHorizontal": "HUG",
@@ -847,8 +909,12 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "HUG",
               "cornerRadius": 8,
-              "fills": ["color/bg/neutral/primary"],
-              "strokes": ["color/border/neutral/primary"],
+              "fills": [
+                "color/bg/neutral/primary"
+              ],
+              "strokes": [
+                "color/border/neutral/primary"
+              ],
               "strokeWeight": 1,
               "strokeAlign": "INSIDE",
               "itemSpacing": 0,
@@ -864,7 +930,9 @@
                   "height": 160,
                   "layoutSizingHorizontal": "FIXED",
                   "layoutSizingVertical": "FIXED",
-                  "fills": ["color/bg/neutral/secondary"],
+                  "fills": [
+                    "color/bg/neutral/secondary"
+                  ],
                   "strokes": [],
                   "strokeWeight": 0,
                   "cornerRadius": 0,
@@ -959,7 +1027,9 @@
                       "paddingLeft": 8,
                       "paddingRight": 8,
                       "cornerRadius": 1000,
-                      "fills": ["color/bg/brand/light/default"],
+                      "fills": [
+                        "color/bg/brand/light/default"
+                      ],
                       "strokes": [],
                       "strokeWeight": 0,
                       "layoutSizingHorizontal": "HUG",
@@ -991,7 +1061,9 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 8,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": []
@@ -1010,7 +1082,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -1031,7 +1105,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -1055,7 +1131,9 @@
           "layoutSizingHorizontal": "HUG",
           "layoutSizingVertical": "HUG",
           "fills": [],
-          "strokes": ["color/border/neutral/primary"],
+          "strokes": [
+            "color/border/neutral/primary"
+          ],
           "strokeWeight": 1,
           "strokeAlign": "INSIDE",
           "cornerRadius": 4,
@@ -1072,7 +1150,9 @@
               "height": 40,
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
-              "fills": ["color/bg/neutral/secondary"],
+              "fills": [
+                "color/bg/neutral/secondary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": [
@@ -1095,7 +1175,9 @@
               "height": 40,
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
-              "fills": ["color/border/neutral/primary"],
+              "fills": [
+                "color/border/neutral/primary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": []
@@ -1111,7 +1193,9 @@
               "height": 40,
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
-              "fills": ["color/bg/neutral/primary"],
+              "fills": [
+                "color/bg/neutral/primary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": [
@@ -1134,7 +1218,9 @@
               "height": 40,
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
-              "fills": ["color/border/neutral/primary"],
+              "fills": [
+                "color/border/neutral/primary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": []
@@ -1150,7 +1236,9 @@
               "height": 40,
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
-              "fills": ["color/bg/neutral/secondary"],
+              "fills": [
+                "color/bg/neutral/secondary"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": [
@@ -1199,8 +1287,12 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
               "cornerRadius": 1000,
-              "fills": ["color/bg/brand/default"],
-              "strokes": ["color/border/brand/default"],
+              "fills": [
+                "color/bg/brand/default"
+              ],
+              "strokes": [
+                "color/border/brand/default"
+              ],
               "strokeWeight": 2,
               "strokeAlign": "OUTSIDE",
               "children": []
@@ -1215,7 +1307,11 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
               "cornerRadius": 1000,
-              "fills": [{ "hex": "#a5a5d4" }],
+              "fills": [
+                {
+                  "hex": "#a5a5d4"
+                }
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": []
@@ -1230,7 +1326,11 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
               "cornerRadius": 1000,
-              "fills": [{ "hex": "#a5d4a5" }],
+              "fills": [
+                {
+                  "hex": "#a5d4a5"
+                }
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": []
@@ -1245,7 +1345,11 @@
               "layoutSizingHorizontal": "FIXED",
               "layoutSizingVertical": "FIXED",
               "cornerRadius": 1000,
-              "fills": [{ "hex": "#31313a" }],
+              "fills": [
+                {
+                  "hex": "#31313a"
+                }
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "children": []
@@ -1262,7 +1366,9 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 8,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": []
@@ -1281,7 +1387,9 @@
       "paddingLeft": 16,
       "paddingRight": 16,
       "itemSpacing": 12,
-      "fills": ["color/bg/neutral/secondary"],
+      "fills": [
+        "color/bg/neutral/secondary"
+      ],
       "strokes": [],
       "strokeWeight": 0,
       "children": [
@@ -1302,7 +1410,9 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"],
+          "fills": [
+            "color/border/neutral/primary"
+          ],
           "strokes": [],
           "strokeWeight": 0,
           "children": []
@@ -1330,8 +1440,12 @@
           "paddingBottom": 0,
           "paddingLeft": 16,
           "paddingRight": 16,
-          "fills": ["color/bg/neutral/primary"],
-          "strokes": ["color/border/neutral/primary"],
+          "fills": [
+            "color/bg/neutral/primary"
+          ],
+          "strokes": [
+            "color/border/neutral/primary"
+          ],
           "strokeWeight": 1,
           "strokeAlign": "OUTSIDE",
           "itemSpacing": 8,
@@ -1419,8 +1533,12 @@
           "paddingLeft": 16,
           "paddingRight": 16,
           "itemSpacing": 8,
-          "fills": ["color/bg/neutral/primary"],
-          "strokes": ["color/border/neutral/primary"],
+          "fills": [
+            "color/bg/neutral/primary"
+          ],
+          "strokes": [
+            "color/border/neutral/primary"
+          ],
           "strokeWeight": 1,
           "strokeAlign": "OUTSIDE",
           "children": [
@@ -1481,7 +1599,9 @@
                   "paddingLeft": 10,
                   "paddingRight": 10,
                   "cornerRadius": 1000,
-                  "fills": ["color/bg/brand/light/default"],
+                  "fills": [
+                    "color/bg/brand/light/default"
+                  ],
                   "strokes": [],
                   "strokeWeight": 0,
                   "layoutSizingHorizontal": "HUG",
@@ -1511,7 +1631,9 @@
               "paddingLeft": 16,
               "paddingRight": 16,
               "cornerRadius": 4,
-              "fills": ["color/bg/brand/default"],
+              "fills": [
+                "color/bg/brand/default"
+              ],
               "strokes": [],
               "strokeWeight": 0,
               "layoutSizingHorizontal": "FILL",

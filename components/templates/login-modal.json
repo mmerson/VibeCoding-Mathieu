@@ -11,10 +11,14 @@
     "paddingLeft": 0,
     "paddingRight": 0,
     "itemSpacing": 0,
-    "fills": [{ "type": "SOLID", "color": "#1e1e28" }]
+    "fills": [
+      {
+        "type": "SOLID",
+        "color": "#1e1e28"
+      }
+    ]
   },
   "nodes": [
-
     {
       "type": "FRAME",
       "id": "page-dimmed",
@@ -25,7 +29,12 @@
       "layoutSizingHorizontal": "FILL",
       "layoutSizingVertical": "FIXED",
       "height": 220,
-      "fills": [{ "type": "SOLID", "color": "#1e1e28" }],
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": "#1e1e28"
+        }
+      ],
       "children": [
         {
           "type": "TEXT",
@@ -38,7 +47,6 @@
         }
       ]
     },
-
     {
       "type": "FRAME",
       "id": "modal-card",
@@ -52,10 +60,11 @@
       "paddingRight": 24,
       "itemSpacing": 20,
       "cornerRadius": 16,
-      "fills": ["color/bg/neutral/primary"],
+      "fills": [
+        "color/bg/neutral/primary"
+      ],
       "layoutSizingHorizontal": "FILL",
       "children": [
-
         {
           "type": "FRAME",
           "id": "handle-row",
@@ -78,11 +87,12 @@
               "width": 40,
               "height": 4,
               "cornerRadius": 1000,
-              "fills": ["color/border/neutral/primary"]
+              "fills": [
+                "color/border/neutral/primary"
+              ]
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "header",
@@ -114,7 +124,6 @@
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "textfield-email",
@@ -147,8 +156,15 @@
               "paddingRight": 16,
               "itemSpacing": 8,
               "cornerRadius": 4,
-              "fills": ["color/bg/neutral/primary"],
-              "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+              "fills": [
+                "color/bg/neutral/primary"
+              ],
+              "strokes": [
+                {
+                  "type": "SOLID",
+                  "color": "color/border/brand/default"
+                }
+              ],
               "strokeWeight": 2,
               "strokeAlign": "INSIDE",
               "layoutSizingHorizontal": "FILL",
@@ -166,7 +182,6 @@
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "btn-email-cta",
@@ -179,7 +194,9 @@
           "paddingLeft": 16,
           "paddingRight": 16,
           "cornerRadius": 4,
-          "fills": ["color/bg/brand/default"],
+          "fills": [
+            "color/bg/brand/default"
+          ],
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "HUG",
           "children": [
@@ -193,7 +210,6 @@
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "divider-ou",
@@ -213,7 +229,9 @@
               "layoutSizingHorizontal": "FILL",
               "layoutSizingVertical": "FIXED",
               "height": 1,
-              "fills": ["color/border/neutral/primary"]
+              "fills": [
+                "color/border/neutral/primary"
+              ]
             },
             {
               "type": "TEXT",
@@ -231,11 +249,12 @@
               "layoutSizingHorizontal": "FILL",
               "layoutSizingVertical": "FIXED",
               "height": 1,
-              "fills": ["color/border/neutral/primary"]
+              "fills": [
+                "color/border/neutral/primary"
+              ]
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "sso-section",
@@ -266,7 +285,6 @@
               "fills": [],
               "layoutSizingHorizontal": "FILL",
               "children": [
-
                 {
                   "type": "FRAME",
                   "id": "btn-google",
@@ -280,8 +298,15 @@
                   "paddingRight": 16,
                   "itemSpacing": 8,
                   "cornerRadius": 4,
-                  "fills": ["color/bg/neutral/primary"],
-                  "strokes": [{ "type": "SOLID", "color": "color/border/neutral/primary" }],
+                  "fills": [
+                    "color/bg/neutral/primary"
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "color": "color/border/neutral/primary"
+                    }
+                  ],
                   "strokeWeight": 1,
                   "strokeAlign": "INSIDE",
                   "layoutSizingHorizontal": "FILL",
@@ -305,7 +330,6 @@
                     }
                   ]
                 },
-
                 {
                   "type": "FRAME",
                   "id": "btn-apple",
@@ -319,7 +343,12 @@
                   "paddingRight": 16,
                   "itemSpacing": 8,
                   "cornerRadius": 4,
-                  "fills": [{ "type": "SOLID", "color": "#1a1a1a" }],
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "color": "#1a1a1a"
+                    }
+                  ],
                   "strokes": [],
                   "strokeWeight": 0,
                   "layoutSizingHorizontal": "FILL",
@@ -343,12 +372,10 @@
                     }
                   ]
                 }
-
               ]
             }
           ]
         },
-
         {
           "type": "FRAME",
           "id": "divider-bottom",
@@ -357,9 +384,10 @@
           "layoutSizingHorizontal": "FILL",
           "layoutSizingVertical": "FIXED",
           "height": 1,
-          "fills": ["color/border/neutral/primary"]
+          "fills": [
+            "color/border/neutral/primary"
+          ]
         },
-
         {
           "type": "FRAME",
           "id": "btn-envoyer",
@@ -373,7 +401,12 @@
           "paddingRight": 16,
           "cornerRadius": 4,
           "fills": [],
-          "strokes": [{ "type": "SOLID", "color": "color/border/brand/default" }],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": "color/border/brand/default"
+            }
+          ],
           "strokeWeight": 1,
           "strokeAlign": "INSIDE",
           "layoutSizingHorizontal": "FILL",
@@ -389,7 +422,6 @@
             }
           ]
         }
-
       ]
     }
   ]
